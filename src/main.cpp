@@ -1,14 +1,10 @@
 #include <iostream>
 #include <string>
 
-#define LOG(X): cout << X << endl;
-
-void showMenu() {
-    std::string options[4];
-}
-
+#include "command-line-options.hpp"
 
 
 int main () {
+    printHelp();
     return 1;
 }
