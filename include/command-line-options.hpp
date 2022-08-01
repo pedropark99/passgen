@@ -1,5 +1,4 @@
-#ifndef COMMAND_LINE_H_INCLUDED
-#define COMMAND_LINE_H_INCLUDED
+#pragma once
 
 #include <string>
 
@@ -22,5 +21,3 @@ namespace password {
 
 
 
-
-#endif
