@@ -15,5 +15,8 @@ main.o: $(SOURCE_DIRECTORY)/main.cpp
 help.o: $(SOURCE_DIRECTORY)/help.cpp
 	g++ -I./include -c $(SOURCE_DIRECTORY)/help.cpp
 
+options_parser.o: $(SOURCE_DIRECTORY)/options_parser.cpp
+	g++ -I./include -c $(SOURCE_DIRECTORY)/options_parser.cpp
+
 clean:
 	rm *.o

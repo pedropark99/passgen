@@ -5,6 +5,9 @@
 
 #include "constants.hpp"
 
+#include <getopt.h>
+#include <unistd.h>
+
 int getRandomNumber (int maxLimit) {
     int number = std::rand() % maxLimit;
     return number;
@@ -29,10 +32,28 @@ std::string generatePassword (int passwordLength) {
 
 
 
-int main () {
-    
-    std::string password = generatePassword(15);
-    std::cout << password << std::endl;
+int main (int argc, char **argv) {
+    int aflag = 0;
+    int bflag = 0;
+    int index;
+    int option;
+
+    opterr = 0;
+
+    while ((option = getopt (argc, argv, "ab")) != -1)
+        switch (option)
+        {
+        case 'a':
+            aflag = 1;
+            break;
+        case 'b':
+            bflag = 1;
+            break;
+        default:
+            abort ();
+        }
+
+    printf("Variável a: %d, Variável b: %d", aflag, bflag);
 
     return 1;
 }
