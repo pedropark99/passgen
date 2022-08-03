@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "constants.hpp"
-
 #include <getopt.h>
 #include <unistd.h>
+
+#include "constants.hpp"
+#include "command-line-options.hpp"
+
 
 int getRandomNumber (int maxLimit) {
     int number = std::rand() % maxLimit;
@@ -16,6 +18,10 @@ int getRandomNumber (int maxLimit) {
 void startRandomSeed () {
     std::srand(time(NULL));
 }
+
+char CMD_LINE_OPTIONS[] = {
+    'l', 'b'
+};
 
 std::string generatePassword (int passwordLength) {
     int randomIndex;
@@ -31,29 +37,41 @@ std::string generatePassword (int passwordLength) {
 }
 
 
-
-int main (int argc, char **argv) {
-    int aflag = 0;
+void checkCmdLineOptions (int argc, char *argv[]) {
+    char *lflag;
     int bflag = 0;
-    int index;
     int option;
-
-    opterr = 0;
-
-    while ((option = getopt (argc, argv, "ab")) != -1)
-        switch (option)
-        {
-        case 'a':
-            aflag = 1;
+    while ((option = getopt(argc, argv, "l:b")) != 1) {
+        switch (option) {
+        case 'l':
+            lflag = optarg;
             break;
         case 'b':
             bflag = 1;
             break;
         default:
-            abort ();
+            raiseCmdOptionException();
+            abort();
+            break;
         }
+    }
 
-    printf("Variável a: %d, Variável b: %d", aflag, bflag);
+    std::cout << lflag << std::endl;
+}
+
+
+void raiseCmdOptionException () {
+    std::cout << "Invalid command line option! Available options are: ";
+    for (int i = 0; i < sizeof(CMD_LINE_OPTIONS) / sizeof(CMD_LINE_OPTIONS[0]); i++) {
+        std::cout << CMD_LINE_OPTIONS[i];
+    };
+    std::cout << std::endl;
+}
+
+
+
+int main (int argc, char **argv) {
+    checkCmdLineOptions(argc, argv);
 
     return 1;
 }
