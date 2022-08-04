@@ -9,7 +9,9 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Thu Aug  4 13:34:16 2022
+ 
+# Make data base, printed on Thu Aug  4 15:10:55 2022
+ 
 
  
 # Variables
@@ -26,13 +28,21 @@ BUILD_DIRECTORY = build
 USERPROFILE = C:\Users\pedro
 # environment
 LOCALAPPDATA = C:\Users\pedro\AppData\Local
+ 
 # environment
+ 
 VSCODE_CWD = C:\Users\pedro\AppData\Local\Programs\Microsoft VS Code
+ 
 # environment
+ 
 SYSTEMROOT = C:\WINDOWS
+ 
 # environment
+ 
 PROCESSOR_LEVEL = 6
+ 
 # environment
+ 
 PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := make
@@ -43,10 +53,15 @@ CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_1184_SNUQUPTSQJJLBBHF
 # environment
 !E: = e:\Users\pedro\Documents\Projetos\pkgs\password-generator
 # environment
+ 
 FPS_BROWSER_USER_PROFILE_STRING = Default
+ 
 # environment
+ 
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+ 
 # default
+ 
 .VARIABLES := 
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
@@ -73,14 +88,16 @@ CURDIR := /e/Users/pedro/Documents/Projetos/pkgs/password-generator
 # environment
 SPARK_HOME = C:\spark
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
+ 
 PROGRAMFILES = C:\Program Files
 # environment
 MFLAGS = -pqrR
 # default
+ 
 .SHELLFLAGS := -c
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
@@ -145,10 +162,12 @@ COMMONPROGRAMFILES = C:\Program Files\Common Files
 # environment
 PROGRAMW6432 = C:\Program Files
 # makefile (from 'Makefile', line 3)
+ 
 source_files = main.cpp
 # environment
 PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # automatic
+ 
 +F = $(notdir $+)
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
@@ -172,7 +191,6 @@ NUMBER_OF_PROCESSORS = 4
 PUBLIC = C:\Users\Public
 # environment
 APPDATA = C:\Users\pedro\AppData\Roaming
- 
 # environment
 HOMEDRIVE = C:
 # environment
@@ -207,8 +225,10 @@ SESSIONNAME = Console
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
 PROCESSOR_REVISION = 3c03
+ 
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+ 
 # variable set hash-table stats:
  
 # Load=97/1024=9%, Rehash=0, Collisions=11/127=9%
@@ -217,6 +237,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 
 # No pattern-specific variable values.
 
+ 
 # Directories
 
 # . (device 773598794, inode 20266198323236046): 9 files, no impossibilities.
@@ -232,7 +253,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-03 23:07:55.4131782
+#  Last modified 2022-08-04 14:45:42.2310689
 #  File has been updated.
 #  Successfully updated.
 
@@ -250,6 +271,23 @@ clean:
 	rm *.o
 
 # Not a target:
+src/arguments_parser.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+arguments_parser.o: src/arguments_parser.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+ 
+	g++ -I./include -c $(SOURCE_DIRECTORY)/arguments_parser.cpp
+ 
+
+ 
+# Not a target:
+ 
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -262,14 +300,14 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-build/main: main.o options_parser.o
+build/main: main.o arguments_parser.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 7):
 	rm -r build
 	mkdir build
-	g++ -I./include -o $(BUILD_DIRECTORY)/main main.o options_parser.o
+	g++ -I./include -o $(BUILD_DIRECTORY)/main main.o arguments_parser.o
 	make clean
 
 main.o: src/main.cpp
@@ -279,19 +317,6 @@ main.o: src/main.cpp
 #  recipe to execute (from 'Makefile', line 13):
 	g++ -I./include -c $(SOURCE_DIRECTORY)/main.cpp
 
-options_parser.o: src/options_parser.cpp
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 16):
-	g++ -I./include -c $(SOURCE_DIRECTORY)/options_parser.cpp
-
-# Not a target:
-src/options_parser.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # files hash-table stats:
 # Load=10/1024=1%, Rehash=0, Collisions=0/26=0%
 # VPATH Search Paths
@@ -300,13 +325,14 @@ src/options_parser.cpp:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 168 B / avg = 8 B
-# current buf: size = 8162 B / used = 168 B / count = 19 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 19 / storage = 172 B / avg = 9 B
+ 
+# current buf: size = 8162 B / used = 172 B / count = 19 / avg = 9 B
+ 
 
 # strcache performance: lookups = 29 / hit rate = 34%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=0/29=0%
- 
-# Finished Make data base on Thu Aug  4 13:34:16 2022
+# Finished Make data base on Thu Aug  4 15:10:55 2022
 
  

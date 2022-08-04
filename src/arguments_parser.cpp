@@ -3,6 +3,8 @@
 #include <sstream>
 #include <set>
 
+#include "arguments_parser.hpp"
+
 // Global variables
 int PASSWORD_LENGTH = 10;
 int SPECIAL_CHARS_FLAG = 0;
@@ -12,27 +14,18 @@ std::set<std::string>  CMD_LINE_ARGUMENTS = {
 };
 
 
-// Functions defined in this cpp:
-void parseCmdLineArguments (int argc, char *argv[]);
-void checkCmdLineArguments (int argc, char *argv[]);
-void checkNumberOfArguments (int argc);
-void lookForInvalidArgument (int argc, char *argv[]);
-void checkIfIsInArgumentSet (std::string argument);
-void checkIfNextArgumentExists (int argc, int argumentIndex);
-bool isLengthArgument (std::string arg);
-bool isSpecialCharsArgument (std::string arg);
-int castLengthValue (std::string lengthValue);
-
-
 
 
 
 void parseCmdLineArguments (int argc, char *argv[]) {
     std::string currentArgument;
     std::string nextArgument;
-    checkCmdLineArguments(argc, argv);
+    checkNumberOfArguments(argc);
     for (int argumentIndex = 0; argumentIndex < argc; argumentIndex++) {
         currentArgument = std::string(argv[argumentIndex]);
+        if (isCommandName(currentArgument)) {
+            continue;
+        }
         if (isLengthArgument(currentArgument)) {
             checkIfNextArgumentExists(argc, argumentIndex);
             argumentIndex++;
@@ -44,28 +37,8 @@ void parseCmdLineArguments (int argc, char *argv[]) {
             SPECIAL_CHARS_FLAG = 1;
             continue;
         }
-    }
-}
 
-
-void checkCmdLineArguments (int argc, char *argv[]) {
-    checkNumberOfArguments(argc);
-    lookForInvalidArgument(argc, argv);
-}
-
-void lookForInvalidArgument (int argc, char *argv[]) {
-    std::string currentArgument;
-    for (int argumentIndex = 1; argumentIndex < argc; argumentIndex++) {
-        currentArgument = std::string(argv[argumentIndex]);
-        checkIfIsInArgumentSet(currentArgument);
-    }
-}
-
-void checkIfIsInArgumentSet (std::string argument) {
-    if (CMD_LINE_ARGUMENTS.find(argument) == CMD_LINE_ARGUMENTS.end()) {
-        std::string errorMessage;
-        errorMessage = std::string("The argument  is invalid!").insert(13, argument);
-        throw std::invalid_argument(errorMessage);
+        checkInvalidArgument(currentArgument);
     }
 }
 
@@ -79,6 +52,15 @@ void checkNumberOfArguments (int argc) {
     }
 }
 
+void checkInvalidArgument (std::string argument) {
+    if (CMD_LINE_ARGUMENTS.find(argument) == CMD_LINE_ARGUMENTS.end()) {
+        std::string errorMessage;
+        errorMessage = std::string("The argument  is invalid!").insert(13, argument);
+        throw std::invalid_argument(errorMessage);
+    }
+}
+
+
 void checkIfNextArgumentExists (int argc, int argumentIndex) {
     int zeroBasedIndexOffSet = 1;
     int nextIndex = argumentIndex + zeroBasedIndexOffSet + 1;
@@ -88,13 +70,20 @@ void checkIfNextArgumentExists (int argc, int argumentIndex) {
 }
 
 
-bool isLengthArgument (std::string arg) {
-    return arg == "-l" | arg == "--length";
+
+bool isCommandName (std::string argument) {
+    return argument == "main";
 }
 
-bool isSpecialCharsArgument (std::string arg) {
-    return arg == "-s" | arg == "--special-chars";
+bool isLengthArgument (std::string argument) {
+    return argument == "-l" | argument == "--length";
 }
+
+bool isSpecialCharsArgument (std::string argument) {
+    return argument == "-s" | argument == "--special-chars";
+}
+
+
 
 int castLengthValue (std::string lengthValue) {
     std::istringstream ss(lengthValue);
