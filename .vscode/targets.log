@@ -9,7 +9,8 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Aug  3 19:30:20 2022
+ 
+# Make data base, printed on Wed Aug  3 22:22:13 2022
 
 # Variables
 
@@ -53,10 +54,8 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
 %F = $(notdir $%)
- 
 # environment
 VSCODE_CODE_CACHE_PATH = C:\Users\pedro\AppData\Roaming\Code\CachedData\3b889b090b5ad5793f524b5d1d39fda662b96a2a
- 
 # environment
 LANG = C
 # default
@@ -66,7 +65,6 @@ TMP = /c/Users/pedro/AppData/Local/Temp
 # default
 .INCLUDE_DIRS = /usr/include /usr/include
 # makefile
- 
 MAKEFLAGS = pqrR
 # environment
 ONEDRIVE = C:\Users\pedro\OneDrive
@@ -75,9 +73,13 @@ CURDIR := /e/Users/pedro/Documents/Projetos/pkgs/password-generator
 # environment
 SPARK_HOME = C:\spark
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+ 
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+ 
 # automatic
+ 
 *D = $(patsubst %/,%,$(dir $*))
+ 
 # environment
 PROGRAMFILES = C:\Program Files
 # environment
@@ -92,6 +94,7 @@ COMMONPROGRAMW6432 = C:\Program Files\Common Files
 MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
+ 
 # environment
 VSCODE_PID = 11468
 # automatic
@@ -122,6 +125,7 @@ COMSPEC = C:\WINDOWS\system32\cmd.exe
 WINDIR = C:\WINDOWS
 # environment
 MAKELEVEL := 0
+ 
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
@@ -132,6 +136,7 @@ COMPUTERNAME = DESKTOP-JOTFKIL
 RTOOLS42_HOME = C:\rtools42
 # default
 MAKEFILES := 
+ 
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -164,18 +169,16 @@ OS = Windows_NT
 .DEFAULT_GOAL := build/main
 # default
 MAKE_VERSION := 4.3
- 
 # environment
- 
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-JOTFKIL
 # environment
- 
 NUMBER_OF_PROCESSORS = 4
 # environment
 PUBLIC = C:\Users\Public
 # environment
+ 
 APPDATA = C:\Users\pedro\AppData\Roaming
 # environment
 HOMEDRIVE = C:
@@ -212,9 +215,9 @@ SESSIONNAME = Console
 # environment
 PROCESSOR_REVISION = 3c03
 # environment
+ 
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # variable set hash-table stats:
- 
 # Load=97/1024=9%, Rehash=0, Collisions=11/128=9%
 
 # Pattern-specific Variable Values
@@ -223,10 +226,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 
 # Directories
 
- 
-# . (device 773598794, inode 20266198323236046): 9 files, no impossibilities.
+# . (device 773598794, inode 20266198323236046): 11 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -244,7 +246,8 @@ help.o: src/help.cpp
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-02 21:18:56.9654509
+ 
+#  Last modified 2022-08-03 22:21:57.536014
 #  File has been updated.
 #  Successfully updated.
 
@@ -280,14 +283,14 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-build/main: main.o help.o
+build/main: main.o help.o options_parser.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 7):
 	rm -r build
 	mkdir build
-	g++ -I./include -o $(BUILD_DIRECTORY)/main main.o help.o
+	g++ -I./include -o $(BUILD_DIRECTORY)/main main.o help.o options_parser.o
 	make clean
 
 main.o: src/main.cpp
@@ -311,20 +314,22 @@ src/options_parser.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/29=0%
  
+# Load=12/1024=1%, Rehash=0, Collisions=0/31=0%
 # VPATH Search Paths
 
+ 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
+ 
 
 # strcache buffers: 1 (0) / strings = 21 / storage = 188 B / avg = 8 B
 # current buf: size = 8162 B / used = 188 B / count = 21 / avg = 8 B
 
-# strcache performance: lookups = 32 / hit rate = 34%
+# strcache performance: lookups = 35 / hit rate = 40%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/32=0%
-# Finished Make data base on Wed Aug  3 19:30:20 2022
+# Load=21/8192=0%, Rehash=0, Collisions=0/35=0%
+# Finished Make data base on Wed Aug  3 22:22:13 2022
 
  

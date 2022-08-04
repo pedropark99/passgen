@@ -3,10 +3,10 @@ SOURCE_DIRECTORY = src
 source_files = main.cpp
 
 
-$(BUILD_DIRECTORY)/main: main.o help.o
+$(BUILD_DIRECTORY)/main: main.o help.o options_parser.o
 	rm -r build
 	mkdir build
-	g++ -I./include -o $(BUILD_DIRECTORY)/main main.o help.o
+	g++ -I./include -o $(BUILD_DIRECTORY)/main main.o help.o options_parser.o
 	make clean
 
 main.o: $(SOURCE_DIRECTORY)/main.cpp
