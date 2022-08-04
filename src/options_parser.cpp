@@ -45,7 +45,10 @@ void parseCmdLineArguments (int argc, char *argv[]) {
 
 
 void checkNumberOfArguments (int argc) {
-    int numberOfValidArguments = 1 + ( (sizeof(CMD_LINE_ARGUMENTS) / sizeof(CMD_LINE_ARGUMENTS[0])) / 2 );
+    int numberOfCmdArguments = (sizeof(CMD_LINE_ARGUMENTS) / sizeof(CMD_LINE_ARGUMENTS[0])) / 2;
+    int lengthValueArgument = 1;
+    int commandNameArgument = 1;
+    int numberOfValidArguments = numberOfCmdArguments + lengthValueArgument + commandNameArgument;
     if (argc > numberOfValidArguments) {
         throw std::invalid_argument("Too many arguments given to `password` command at the command line!");
     }
