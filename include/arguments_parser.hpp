@@ -5,7 +5,7 @@
 
 extern std::set<std::string> CMD_LINE_ARGUMENTS;
 extern int PASSWORD_LENGTH;
-extern int SPECIAL_CHARS_FLAG;
+extern bool SPECIAL_CHARS_FLAG;
 void parseCmdLineArguments (int argc, char *argv[]);
 void checkNumberOfArguments (int argc);
 void checkInvalidArgument (std::string argument);

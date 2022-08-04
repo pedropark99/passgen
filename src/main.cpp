@@ -1,10 +1,12 @@
 #include <iostream>
-#include <string.h>
+#include <string>
+#include <vector>
 #include <stdlib.h>
 #include <time.h>
 
 #include "constants.hpp"
 #include "arguments_parser.hpp"
+#include "password.hpp"
 
 
 
@@ -13,8 +15,8 @@
 
 int main (int argc, char *argv[]) {
     parseCmdLineArguments(argc, argv);
-    std::cout << PASSWORD_LENGTH << std::endl;
-    std::cout << SPECIAL_CHARS_FLAG << std::endl;
+    // std::cout << PASSWORD_LENGTH << std::endl;
+    // std::cout << SPECIAL_CHARS_FLAG << std::endl;
     return 1;
 }
 
@@ -23,26 +25,44 @@ int main (int argc, char *argv[]) {
 
 
 
+std::vector<char> reserveCharVector (int numberOfElements) {
+    std::vector<char> reservedVector;
+    reservedVector.reserve(numberOfElements);
+    return reservedVector;
+}
 
+int calculateNumberOfElements () {
+    int numberOfChars = sizeof(ANSI_CHARS);
+    if (SPECIAL_CHARS_FLAG == true) {
+        numberOfChars = numberOfChars + (sizeof(SPECIAL_CHARS) / sizeof(SPECIAL_CHARS[0]));
+    }
+    return numberOfChars;
+}
 
-int getRandomNumber (int maxLimit) {
-    int number = std::rand() % maxLimit;
-    return number;
+std::vector<char> buildCharSet () {
+    int numberOfChars = calculateNumberOfElements();
+    std::vector<char> completeCharSet = reserveCharVector(numberOfChars);
+    return completeCharSet;
+}
+
+std::string generatePassword (int passwordLength, std::vector<char> charSet) {
+    int randomIndex;
+    char password[passwordLength];
+    int numberOfChars = charSet.size();
+    startRandomSeed();
+    for (int i = 0; i < passwordLength; i++) {
+        randomIndex = getRandomNumber(numberOfChars);
+        password[i] = charSet[randomIndex];
+    }
+
+    return std::string(password);
 }
 
 void startRandomSeed () {
     std::srand(time(NULL));
 }
 
-std::string generatePassword (int passwordLength) {
-    int randomIndex;
-    char password[passwordLength];
-    int numberOfAnsiChars = sizeof(ANSI_CHARS) / sizeof(ANSI_CHARS[0]);
-    startRandomSeed();
-    for (int i = 0; i < passwordLength; i++) {
-        randomIndex = getRandomNumber(numberOfAnsiChars);
-        password[i] = ANSI_CHARS[randomIndex];
-    }
-
-    return std::string(password);
+int getRandomNumber (int maxLimit) {
+    int number = std::rand() % maxLimit;
+    return number;
 }

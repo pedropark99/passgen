@@ -7,7 +7,7 @@
 
 // Global variables
 int PASSWORD_LENGTH = 10;
-int SPECIAL_CHARS_FLAG = 0;
+bool SPECIAL_CHARS_FLAG = false;
 std::set<std::string>  CMD_LINE_ARGUMENTS = {
     "-l", "--length",
     "-s", "--special-chars"
@@ -34,7 +34,7 @@ void parseCmdLineArguments (int argc, char *argv[]) {
             continue;
         }
         if (isSpecialCharsArgument(currentArgument)) {
-            SPECIAL_CHARS_FLAG = 1;
+            SPECIAL_CHARS_FLAG = true;
             continue;
         }
 
