@@ -5,17 +5,17 @@
 // Global variables
 int PASSWORD_LENGTH = 10;
 int SPECIAL_CHARS_FLAG = 0;
-std::string CMD_LINE_OPTIONS[] = {
+std::string CMD_LINE_ARGUMENTS[] = {
     "-l", "--length",
     "-s", "--special-chars"
 };
 
 
 // Functions defined in this cpp:
-void parseCmdLineArguments (int argc, char *argv[]);
-bool isLengthArgument (std::string arg);
-bool isSpecialCharsArgument (std::string arg);
-int castLengthValue (std::string lengthValue);
+// void parseCmdLineArguments (int argc, char *argv[]);
+// bool isLengthArgument (std::string arg);
+// bool isSpecialCharsArgument (std::string arg);
+// int castLengthValue (std::string lengthValue);
 
 
 
@@ -24,6 +24,7 @@ int castLengthValue (std::string lengthValue);
 void parseCmdLineArguments (int argc, char *argv[]) {
     std::string currentArgument;
     std::string nextArgument;
+    checkNumberOfArguments(argc);
     for (int argumentIndex = 0; argumentIndex < argc; argumentIndex++) {
         currentArgument = std::string(argv[argumentIndex]);
         if (isLengthArgument(currentArgument)) {
@@ -36,6 +37,14 @@ void parseCmdLineArguments (int argc, char *argv[]) {
             SPECIAL_CHARS_FLAG = 1;
             continue;
         }
+    }
+}
+
+
+void checkNumberOfArguments (int argc) {
+    int numberOfValidArguments = 1 + ( (sizeof(CMD_LINE_ARGUMENTS) / sizeof(CMD_LINE_ARGUMENTS[0])) / 2 );
+    if (argc > numberOfValidArguments) {
+        throw std::invalid_argument("Too many arguments given to `password` command at the command line!");
     }
 }
 

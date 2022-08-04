@@ -3,10 +3,7 @@
 
 #include "command-line-options.hpp"
 
-commandLineArgument COMMAND_LINE_ARGUMENTS[2] = {
-    {"-l", "--length", "The length (how many characters) of the password;"},
-    {"-s", "--special", "Do you want special characters? (e.g. %$#@&*!...). Accepted values are 1 (FALSE) and 0 (NO);"}
-};
+
 
 
 void printHelp () {
