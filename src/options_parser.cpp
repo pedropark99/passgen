@@ -55,7 +55,8 @@ void checkNumberOfArguments (int argc) {
 }
 
 void checkIfNextArgumentExists (int argc, int argumentIndex) {
-    int nextIndex = argumentIndex + 1;
+    int zeroBasedIndexOffSet = 1;
+    int nextIndex = argumentIndex + zeroBasedIndexOffSet + 1;
     if (nextIndex > argc) {
         throw std::invalid_argument("After the argument `-l` or `--length`, you need to provide a integer (that represents the password length), but, none was given!");
     }
