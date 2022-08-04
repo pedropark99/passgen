@@ -9,13 +9,12 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Tue Aug  2 21:19:02 2022
+# Make data base, printed on Wed Aug  3 19:30:20 2022
 
 # Variables
 
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
- 
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -39,7 +38,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11496_BIAUDHQBBYDLFAJY
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11468_KKMZOYYPRAROWGTX
 # environment
 !E: = e:\Users\pedro\Documents\Projetos\pkgs\password-generator
 # environment
@@ -54,8 +53,10 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
 %F = $(notdir $%)
+ 
 # environment
 VSCODE_CODE_CACHE_PATH = C:\Users\pedro\AppData\Roaming\Code\CachedData\3b889b090b5ad5793f524b5d1d39fda662b96a2a
+ 
 # environment
 LANG = C
 # default
@@ -65,6 +66,7 @@ TMP = /c/Users/pedro/AppData/Local/Temp
 # default
 .INCLUDE_DIRS = /usr/include /usr/include
 # makefile
+ 
 MAKEFLAGS = pqrR
 # environment
 ONEDRIVE = C:\Users\pedro\OneDrive
@@ -73,7 +75,7 @@ CURDIR := /e/Users/pedro/Documents/Projetos/pkgs/password-generator
 # environment
 SPARK_HOME = C:\spark
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -91,7 +93,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 11496
+VSCODE_PID = 11468
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -142,7 +144,6 @@ USERNAME = pedro
 COMMONPROGRAMFILES = C:\Program Files\Common Files
 # automatic
 ?F = $(notdir $?)
- 
 # environment
 PROGRAMW6432 = C:\Program Files
 # makefile (from 'Makefile', line 3)
@@ -163,11 +164,14 @@ OS = Windows_NT
 .DEFAULT_GOAL := build/main
 # default
 MAKE_VERSION := 4.3
+ 
 # environment
+ 
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-JOTFKIL
 # environment
+ 
 NUMBER_OF_PROCESSORS = 4
 # environment
 PUBLIC = C:\Users\Public
@@ -219,6 +223,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 
 # Directories
 
+ 
 # . (device 773598794, inode 20266198323236046): 9 files, no impossibilities.
 
 # 9 files, no impossibilities in 1 directories.
@@ -306,8 +311,8 @@ src/options_parser.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
- 
 # Load=12/1024=1%, Rehash=0, Collisions=0/29=0%
+ 
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -320,6 +325,6 @@ src/options_parser.cpp:
 # strcache performance: lookups = 32 / hit rate = 34%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=0/32=0%
-# Finished Make data base on Tue Aug  2 21:19:02 2022
+# Finished Make data base on Wed Aug  3 19:30:20 2022
 
  
