@@ -12,10 +12,12 @@ std::string CMD_LINE_ARGUMENTS[] = {
 
 
 // Functions defined in this cpp:
-// void parseCmdLineArguments (int argc, char *argv[]);
-// bool isLengthArgument (std::string arg);
-// bool isSpecialCharsArgument (std::string arg);
-// int castLengthValue (std::string lengthValue);
+void parseCmdLineArguments (int argc, char *argv[]);
+void checkNumberOfArguments (int argc);
+void checkIfNextArgumentExists (int argc, int argumentIndex);
+bool isLengthArgument (std::string arg);
+bool isSpecialCharsArgument (std::string arg);
+int castLengthValue (std::string lengthValue);
 
 
 
@@ -28,6 +30,7 @@ void parseCmdLineArguments (int argc, char *argv[]) {
     for (int argumentIndex = 0; argumentIndex < argc; argumentIndex++) {
         currentArgument = std::string(argv[argumentIndex]);
         if (isLengthArgument(currentArgument)) {
+            checkIfNextArgumentExists(argc, argumentIndex);
             argumentIndex++;
             nextArgument = std::string(argv[argumentIndex]);
             PASSWORD_LENGTH = castLengthValue(nextArgument);
@@ -45,6 +48,13 @@ void checkNumberOfArguments (int argc) {
     int numberOfValidArguments = 1 + ( (sizeof(CMD_LINE_ARGUMENTS) / sizeof(CMD_LINE_ARGUMENTS[0])) / 2 );
     if (argc > numberOfValidArguments) {
         throw std::invalid_argument("Too many arguments given to `password` command at the command line!");
+    }
+}
+
+void checkIfNextArgumentExists (int argc, int argumentIndex) {
+    int nextIndex = argumentIndex + 1;
+    if (nextIndex > argc) {
+        throw std::invalid_argument("After the argument `-l` or `--length`, you need to provide a integer (that represents the password length), but, none was given!");
     }
 }
 

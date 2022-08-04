@@ -3,7 +3,7 @@ make: Entering directory '/e/Users/pedro/Documents/Projetos/pkgs/password-genera
 g++ -I./include -c src/options_parser.cpp
 rm -r build
 mkdir build
-g++ -I./include -o build/main main.o help.o options_parser.o
+g++ -I./include -o build/main main.o options_parser.o
 make clean
 make: Leaving directory '/e/Users/pedro/Documents/Projetos/pkgs/password-generator'
  
