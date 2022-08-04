@@ -20,6 +20,7 @@ int castLengthValue (std::string lengthValue);
 
 
 
+
 void parseCmdLineArguments (int argc, char *argv[]) {
     std::string currentArgument;
     std::string nextArgument;
@@ -51,9 +52,9 @@ int castLengthValue (std::string lengthValue) {
     std::istringstream ss(lengthValue);
     int castedValue;
     if (!(ss >> castedValue)) {
-        std::cerr << "Invalid number: " << lengthValue << '\n';
+        std::cerr << "Error: Invalid number passed to `-l` or `--length` argument: " << lengthValue << '\n';
     } else if (!ss.eof()) {
-        std::cerr << "Trailing characters after number: " << lengthValue << '\n';
+        std::cerr << "Error: Trailing characters after number passed to `-l` or `--length` argument: " << lengthValue << '\n';
     }
     return castedValue;
 }
