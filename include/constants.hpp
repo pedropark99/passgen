@@ -1,4 +1,6 @@
-const char ANSI_CHARS[] = {
+#include <vector>
+
+std::vector<char> ANSI_CHARS = {
     // LOWER CASE LETTERS
     'a', 'b', 'c', 'd', 'e', 'f',
     'g', 'h', 'i', 'j', 'k', 'l',
@@ -17,7 +19,7 @@ const char ANSI_CHARS[] = {
 };
 
 
-const char SPECIAL_CHARS[] = {
+std::vector<char> SPECIAL_CHARS = {
     '!', '@', '#', '$', '%',
     '^', '&', '*', '(', ')',
     '-', '_', '=', '|', '\\',
