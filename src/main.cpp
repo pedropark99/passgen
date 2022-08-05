@@ -11,14 +11,22 @@
 
 
 std::vector<char> buildCharSet ();
+int calculateNumberOfElements ();
 
 
 int main (int argc, char *argv[]) {
     parseCmdLineArguments(argc, argv);
-    std::vector<char> completeCharSet = buildCharSet();
-    for (int i = 0; i < completeCharSet.size(); i++) {
-        std::cout << completeCharSet[i] << std::endl;
-    }
+    int numberOfChars = calculateNumberOfElements();
+    std::cout << numberOfChars << std::endl;
+    std::vector<char> charSetVector;
+    std::vector<char>::iterator vecIterator;
+    vecIterator = charSetVector.begin();
+    charSetVector.reserve(numberOfChars);
+    // O insert tá gerando algum erro. Preciso investigar:
+    // charSetVector.insert(vecIterator, ANSI_CHARS.begin(), ANSI_CHARS.end());
+    // for (int i = 0; i < charSetVector.size(); i++) {
+    //     std::cout << charSetVector[i] << std::endl;
+    // }   
     return 1;
 }
 
