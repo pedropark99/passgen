@@ -1,6 +1,7 @@
 make.exe --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/e/Users/pedro/Documents/Projetos/pkgs/passgen'
 g++ -I./include -c src/main.cpp
+ 
 g++ -I./include -c src/arguments_parser.cpp
 rm -r build
 mkdir build

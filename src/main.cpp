@@ -14,14 +14,37 @@ std::vector<char> buildCharSet ();
 int calculateNumberOfElements ();
 
 
+
+
+void fillCharSetVector (std::vector<char>& vectorToFill, int lastElementIndex, std::vector<char>& charSetToBeInserted) {
+    int currentVectorIndex = lastElementIndex;
+    int sizeIndex = 0;
+    int charSetIndex = 0;
+    for (currentVectorIndex; sizeIndex < charSetToBeInserted.size(); currentVectorIndex++) {
+        vectorToFill[currentVectorIndex] = charSetToBeInserted[charSetIndex];
+        charSetIndex++;
+        sizeIndex++;
+    }
+
+}
+
 int main (int argc, char *argv[]) {
     parseCmdLineArguments(argc, argv);
     int numberOfChars = calculateNumberOfElements();
-    std::cout << numberOfChars << std::endl;
+    // std::cout << numberOfChars << std::endl;
     std::vector<char> charSetVector;
-    std::vector<char>::iterator vecIterator;
-    vecIterator = charSetVector.begin();
     charSetVector.reserve(numberOfChars);
+    fillCharSetVector(charSetVector, 0, ANSI_CHARS);
+    std::cout << charSetVector.size() << std::endl;
+    for (int i = 0; i < charSetVector.size(); i++) {
+        std::cout << charSetVector[i] << std::endl;
+    }  
+
+    // std::cout << numberOfChars << std::endl;
+    // std::vector<char> charSetVector;
+    // charSetVector.reserve(numberOfChars);
+    // std::vector<char>::iterator vecIterator;
+    // vecIterator = charSetVector.begin();
     // O insert tá gerando algum erro. Preciso investigar:
     // charSetVector.insert(vecIterator, ANSI_CHARS.begin(), ANSI_CHARS.end());
     // for (int i = 0; i < charSetVector.size(); i++) {
@@ -29,6 +52,7 @@ int main (int argc, char *argv[]) {
     // }   
     return 1;
 }
+
 
 
 
@@ -49,23 +73,14 @@ int calculateNumberOfElements () {
     return numberOfChars;
 }
 
-std::vector<char> fillCharSetVector (std::vector<char> charSetVector) {
-    std::vector<char>::iterator vecIterator;
-    vecIterator = charSetVector.begin();
-    charSetVector.insert(vecIterator, ANSI_CHARS.begin(), ANSI_CHARS.end());
-    // if (SPECIAL_CHARS_FLAG == true) {
 
-    //     charSetVector.insert(vecIterator, ANSI_CHARS.end());
-    // }
-    return charSetVector;
-}
 
-std::vector<char> buildCharSet () {
-    int numberOfChars = calculateNumberOfElements();
-    std::vector<char> completeCharSet = reserveCharVector(numberOfChars);
-    completeCharSet = fillCharSetVector(completeCharSet);
-    return completeCharSet;
-}
+// std::vector<char> buildCharSet () {
+//     int numberOfChars = calculateNumberOfElements();
+//     std::vector<char> completeCharSet = reserveCharVector(numberOfChars);
+//     completeCharSet = fillCharSetVector(completeCharSet);
+//     return completeCharSet;
+// }
 
 
 
