@@ -9,15 +9,15 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sun Aug 14 10:20:17 2022
+# Make data base, printed on Sun Aug 14 10:27:33 2022
 
 # Variables
 
+ 
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
- 
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 1)
@@ -92,6 +92,7 @@ MAKEFILE_LIST := Makefile
 @F = $(notdir $@)
 # environment
 VSCODE_PID = 2964
+ 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -110,14 +111,10 @@ PROGRAMDATA = C:\ProgramData
 SHELL := /bin/sh
 # environment
 HOMEPATH = \Users\pedro
- 
 # default
- 
 MAKECMDGOALS := all
- 
 # environment
 DRIVERDATA = C:\Windows\System32\Drivers\DriverData
- 
 # environment
 COMSPEC = C:\WINDOWS\system32\cmd.exe
 # environment
@@ -127,9 +124,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
- 
 PATH = /c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/Git/cmd:/c/Program Files/nodejs:/c/spark/bin:/c/Hadoop/bin:/c/Program Files (x86)/Calibre2:/usr/bin:/c/Users/pedro/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/c/Users/pedro/AppData/Roaming/TinyTeX/bin/win32:/c/Users/pedro/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/pedro/AppData/Local/Programs/Python/Python39:/c/Users/pedro/AppData/Local/Microsoft/WindowsApps:/c/Users/pedro/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/pedro/AppData/Roaming/npm:/c/Users/pedro/AppData/Local/Programs/Quarto/bin:/c/Users/pedro/.deno/bin:/usr/bin
- 
 # environment
 COMPUTERNAME = DESKTOP-JOTFKIL
 # environment
@@ -165,6 +160,7 @@ OS = Windows_NT
 # environment
 __COMPAT_LAYER = DetectorsAppHealth
 # makefile
+ 
 .DEFAULT_GOAL := build/passgen
 # default
 MAKE_VERSION := 4.3
@@ -196,14 +192,11 @@ ELECTRON_RUN_AS_NODE = 1
 TEMP = /c/Users/pedro/AppData/Local/Temp
 # environment
 VSCODE_IPC_HOOK = \\.\pipe\bdaeb877f8385725989af8bd30fcff31-1.70.1-main-sock
- 
 # environment
- 
 TERM = xterm-256color
 # default
 .RECIPEPREFIX := 
 # automatic
- 
 <F = $(notdir $<)
 # default
 SUFFIXES := 
@@ -212,13 +205,15 @@ ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # default
+ 
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+ 
 # environment
 PROCESSOR_REVISION = 3c03
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # variable set hash-table stats:
-# Load=97/1024=9%, Rehash=0, Collisions=10/127=8%
+# Load=97/1024=9%, Rehash=0, Collisions=10/128=8%
 
 # Pattern-specific Variable Values
 
@@ -239,7 +234,8 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-14 10:20:07.0998143
+ 
+#  Last modified 2022-08-14 10:25:38.9522042
 #  File has been updated.
 #  Successfully updated.
 
@@ -252,8 +248,10 @@ src/main.cpp:
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
+ 
+#  recipe to execute (from 'Makefile', line 22):
 	rm *.o
 
 # Not a target:
@@ -261,14 +259,24 @@ src/arguments_parser.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 arguments_parser.o: src/arguments_parser.cpp
+ 
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+ 
+#  File has not been updated.
+ 
+#  recipe to execute (from 'Makefile', line 15):
+	g++ -I./include -c $(SOURCE_DIRECTORY)/arguments_parser.cpp
+
+password.o: src/password.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
-	g++ -I./include -c $(SOURCE_DIRECTORY)/arguments_parser.cpp
+#  recipe to execute (from 'Makefile', line 18):
+	g++ -I./include -c $(SOURCE_DIRECTORY)/password.cpp
 
 # Not a target:
 .DEFAULT:
@@ -283,6 +291,7 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
+ 
 main.o: src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -290,33 +299,37 @@ main.o: src/main.cpp
 #  recipe to execute (from 'Makefile', line 12):
 	g++ -I./include -c $(SOURCE_DIRECTORY)/main.cpp
 
-build/passgen: main.o arguments_parser.o
+build/passgen: main.o arguments_parser.o password.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
 	rm -r build
 	mkdir build
-	g++ -I./include -o $(BUILD_DIRECTORY)/passgen main.o arguments_parser.o
+	g++ -I./include -o $(BUILD_DIRECTORY)/passgen main.o arguments_parser.o password.o
 	make clean
 
+# Not a target:
+src/password.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/26=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/31=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
- 
 
 # No general ('VPATH' variable) search path.
- 
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 175 B / avg = 9 B
-# current buf: size = 8162 B / used = 175 B / count = 19 / avg = 9 B
- 
+# strcache buffers: 1 (0) / strings = 21 / storage = 203 B / avg = 9 B
+# current buf: size = 8162 B / used = 203 B / count = 21 / avg = 9 B
 
-# strcache performance: lookups = 29 / hit rate = 34%
+# strcache performance: lookups = 33 / hit rate = 36%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=0/29=0%
-# Finished Make data base on Sun Aug 14 10:20:17 2022
+ 
+# Load=21/8192=0%, Rehash=0, Collisions=0/33=0%
+# Finished Make data base on Sun Aug 14 10:27:33 2022
 
  

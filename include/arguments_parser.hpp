@@ -14,6 +14,6 @@ bool isCommandName (std::string argument);
 bool isLengthArgument (std::string arg);
 bool isSpecialCharsArgument (std::string arg);
 int castLengthValue (std::string lengthValue);
-
+bool stringEndsWith (std::string stringToCheck, std::string endToCompare);
 
 

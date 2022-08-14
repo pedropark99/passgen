@@ -12,13 +12,7 @@ int main (int argc, char *argv[]) {
     parseCmdLineArguments(argc, argv);
     int numberOfChars = calculateNumberOfElements();
     std::vector<char> charSetVector = buildCharSetVector(numberOfChars);
-
-
-    for (char element: charSetVector) {
-        std::cout << element << std::endl;
-    }
-    
-
- 
+    std::string password = generatePassword(PASSWORD_LENGTH, charSetVector);
+    std::cout << password << std::endl;
     return 1;
 }

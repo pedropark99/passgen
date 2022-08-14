@@ -35,7 +35,6 @@ void fillCharSetVector (std::vector<char>& charSetVector) {
 
 }
 
-
 void copyElementsToVector (std::vector<char>& destinationVector,
                            std::vector<char>& sourceVector,
                            std::vector<char>::iterator& destionationIterator) {
@@ -45,9 +44,6 @@ void copyElementsToVector (std::vector<char>& destinationVector,
     );
     destionationIterator = std::next(destionationIterator, sourceVector.size());
 }
-
-
-
 
 
 

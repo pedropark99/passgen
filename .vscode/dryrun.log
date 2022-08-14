@@ -3,10 +3,12 @@ make: Entering directory '/e/Users/pedro/Documents/Projetos/pkgs/passgen'
 g++ -I./include -c src/main.cpp
  
 g++ -I./include -c src/arguments_parser.cpp
+ 
+g++ -I./include -c src/password.cpp
+ 
 rm -r build
 mkdir build
- 
-g++ -I./include -o build/passgen main.o arguments_parser.o
+g++ -I./include -o build/passgen main.o arguments_parser.o password.o
 make clean
 make: Leaving directory '/e/Users/pedro/Documents/Projetos/pkgs/passgen'
  

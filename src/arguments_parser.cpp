@@ -72,7 +72,7 @@ void checkIfNextArgumentExists (int argc, int argumentIndex) {
 
 
 bool isCommandName (std::string argument) {
-    return argument == "passgen";
+    return argument == "passgen" | stringEndsWith(argument, "passgen");
 }
 
 bool isLengthArgument (std::string argument) {
@@ -81,6 +81,17 @@ bool isLengthArgument (std::string argument) {
 
 bool isSpecialCharsArgument (std::string argument) {
     return argument == "-s" | argument == "--special-chars";
+}
+
+
+bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
+	int result = stringToCheck.compare(
+		stringToCheck.length() - endToCompare.length(),
+		stringToCheck.length(),
+		endToCompare
+	);
+	
+	return result == 0;
 }
 
 
