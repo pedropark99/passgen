@@ -7,10 +7,16 @@
 
 // Global variables
 int PASSWORD_LENGTH = 10;
+bool LOWER_CASE_LETTERS_FLAG = true;
+bool UPPER_CASE_LETTERS_FLAG = true;
+bool NUMBERS_FLAG = false;
 bool SPECIAL_CHARS_FLAG = false;
 std::set<std::string>  CMD_LINE_ARGUMENTS = {
     "-l", "--length",
-    "-s", "--special-chars"
+    "-s", "--special-chars",
+    "-n", "--numbers",
+    "-u", "--no-upper-case-letters"
+    "-o", "--no-lower-case-letters"
 };
 
 
@@ -37,6 +43,18 @@ void parseCmdLineArguments (int argc, char *argv[]) {
             SPECIAL_CHARS_FLAG = true;
             continue;
         }
+        if (isNumbersArgument(currentArgument)) {
+            NUMBERS_FLAG = true;
+            continue;
+        }
+        if (isLowerCaseArgument(currentArgument)) {
+            LOWER_CASE_LETTERS_FLAG = false;
+            continue;
+        }
+        if (isUpperCaseArgument(currentArgument)) {
+            UPPER_CASE_LETTERS_FLAG = false;
+            continue;
+        }
 
         checkInvalidArgument(currentArgument);
     }
@@ -48,7 +66,7 @@ void checkNumberOfArguments (int argc) {
     int commandNameArgument = 1;
     int numberOfValidArguments = numberOfCmdArguments + lengthValueArgument + commandNameArgument;
     if (argc > numberOfValidArguments) {
-        throw std::invalid_argument("Too many arguments given to `password` command at the command line!");
+        throw std::invalid_argument("Too many arguments given to `passgen` command at the command line!");
     }
 }
 
@@ -81,6 +99,18 @@ bool isLengthArgument (std::string argument) {
 
 bool isSpecialCharsArgument (std::string argument) {
     return argument == "-s" | argument == "--special-chars";
+}
+
+bool isNumbersArgument (std::string argument) {
+    return argument == "-n" | argument == "--numbers";
+}
+
+bool isLowerCaseArgument (std::string argument) {
+    return argument == "-o" | argument == "--no-lower-case-letters";
+}
+
+bool isUpperCaseArgument (std::string argument) {
+    return argument == "-u" | argument == "--no-upper-case-letters";
 }
 
 

@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <iterator>
+#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 
@@ -10,11 +11,34 @@
 
 
 int calculateNumberOfElements () {
-    int numberOfChars = ANSI_CHARS.size();
+    checkIfAllFlagsAreFalse();
+    int numberOfChars = 0;
+    if (LOWER_CASE_LETTERS_FLAG == true) {
+        numberOfChars = numberOfChars + LOWER_CASE_LETTERS.size();
+    }
+    if (UPPER_CASE_LETTERS_FLAG == true) {
+        numberOfChars = numberOfChars + UPPER_CASE_LETTERS.size();
+    }
+    if (NUMBERS_FLAG == true) {
+        numberOfChars = numberOfChars + NUMBERS.size();
+    }
     if (SPECIAL_CHARS_FLAG == true) {
         numberOfChars = numberOfChars + SPECIAL_CHARS.size();
     }
     return numberOfChars;
+}
+
+void checkIfAllFlagsAreFalse () {
+    bool allFlagsAreFalse;
+    allFlagsAreFalse = LOWER_CASE_LETTERS_FLAG == false &
+        UPPER_CASE_LETTERS_FLAG == false &
+        NUMBERS_FLAG == false &
+        SPECIAL_CHARS_FLAG == false;
+
+    if (allFlagsAreFalse) {
+        std::cerr << "All character set flags are set to false! As a result, the program does not have a character set to generate your password!" << std::endl;
+        throw;
+    }
 }
 
 std::vector<char> buildCharSetVector (int numberOfElements) {
@@ -27,8 +51,16 @@ std::vector<char> buildCharSetVector (int numberOfElements) {
 void fillCharSetVector (std::vector<char>& charSetVector) {
     std::vector<char>::iterator destinationIterator;
     destinationIterator = charSetVector.begin();
-    copyElementsToVector(charSetVector, ANSI_CHARS, destinationIterator);
 
+    if (LOWER_CASE_LETTERS_FLAG == true) {
+        copyElementsToVector(charSetVector, LOWER_CASE_LETTERS, destinationIterator);
+    }
+    if (UPPER_CASE_LETTERS_FLAG == true) {
+        copyElementsToVector(charSetVector, UPPER_CASE_LETTERS, destinationIterator);
+    }
+    if (NUMBERS_FLAG == true) {
+        copyElementsToVector(charSetVector, NUMBERS, destinationIterator);
+    }
     if (SPECIAL_CHARS_FLAG == true) {
         copyElementsToVector(charSetVector, SPECIAL_CHARS, destinationIterator);
     }

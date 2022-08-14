@@ -6,6 +6,7 @@
 
 std::vector<char> buildCharSet ();
 int calculateNumberOfElements ();
+void checkIfAllFlagsAreFalse ();
 std::vector<char> buildCharSetVector (int numberOfElements);
 void fillCharSetVector (std::vector<char>& charSetVector);
 void copyElementsToVector (
