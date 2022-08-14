@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 
 std::vector<char> ANSI_CHARS = {
