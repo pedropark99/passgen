@@ -9,7 +9,7 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Wed Aug 10 19:45:18 2022
+# Make data base, printed on Sun Aug 14 08:06:37 2022
 
 # Variables
 
@@ -17,8 +17,8 @@ make: *** No rule to make target 'all'.  Stop.
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
- 
 # environment
+ 
 LC_ALL = C
 # makefile (from 'Makefile', line 1)
 BUILD_DIRECTORY = build
@@ -39,7 +39,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_10840_TPBEQTZNHFXADTNO
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2964_JVGDBBBQNFAHXTKO
 # environment
 !E: = e:\Users\pedro\Documents\Projetos\pkgs\passgen
 # environment
@@ -55,7 +55,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\pedro\AppData\Roaming\Code\CachedData\da76f93349a72022ca4670c1b84860304616aaa2
+VSCODE_CODE_CACHE_PATH = C:\Users\pedro\AppData\Roaming\Code\CachedData\6d9b74a70ca9c7733b29f0456fd8195364076dda
 # environment
 LANG = C
 # default
@@ -91,7 +91,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 10840
+VSCODE_PID = 2964
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -158,6 +158,8 @@ USERDOMAIN = DESKTOP-JOTFKIL
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
+# environment
+__COMPAT_LAYER = DetectorsAppHealth
 # makefile
 .DEFAULT_GOAL := build/main
 # default
@@ -169,7 +171,6 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-JOTFKIL
 # environment
 NUMBER_OF_PROCESSORS = 4
 # environment
- 
 PUBLIC = C:\Users\Public
 # environment
 APPDATA = C:\Users\pedro\AppData\Roaming
@@ -185,12 +186,13 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 HOME = /home/pedro
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+ 
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = /c/Users/pedro/AppData/Local/Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\bdaeb877f8385725989af8bd30fcff31-1.70.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\bdaeb877f8385725989af8bd30fcff31-1.70.1-main-sock
 # environment
 TERM = xterm-256color
 # default
@@ -210,7 +212,9 @@ PROCESSOR_REVISION = 3c03
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # variable set hash-table stats:
-# Load=97/1024=9%, Rehash=0, Collisions=11/127=9%
+ 
+# Load=98/1024=10%, Rehash=0, Collisions=11/128=9%
+ 
 
 # Pattern-specific Variable Values
 
@@ -244,7 +248,6 @@ src/main.cpp:
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
 	rm *.o
@@ -288,6 +291,7 @@ build/main: main.o arguments_parser.o
 main.o: src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 13):
 	g++ -I./include -c $(SOURCE_DIRECTORY)/main.cpp
@@ -306,6 +310,6 @@ main.o: src/main.cpp
 # strcache performance: lookups = 29 / hit rate = 34%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=0/29=0%
-# Finished Make data base on Wed Aug 10 19:45:18 2022
+# Finished Make data base on Sun Aug 14 08:06:37 2022
 
  

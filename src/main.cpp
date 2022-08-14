@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iterator>
 #include <stdlib.h>
 #include <time.h>
 
@@ -12,58 +13,31 @@
 
 std::vector<char> buildCharSet ();
 int calculateNumberOfElements ();
+std::vector<char> buildCharSetVector (int numberOfElements);
+void fillCharSetVector (std::vector<char>& charSetVector);
+void copyElementsToVector (std::vector<char>& destinationVector,
+                           std::vector<char>& sourceVector,
+                           std::vector<char>::iterator& destionationIterator);
 
 
-
-
-void fillCharSetVector (std::vector<char>& vectorToFill, int lastElementIndex, std::vector<char>& charSetToBeInserted) {
-    int currentVectorIndex = lastElementIndex;
-    int sizeIndex = 0;
-    int charSetIndex = 0;
-    for (currentVectorIndex; sizeIndex < charSetToBeInserted.size(); currentVectorIndex++) {
-        vectorToFill[currentVectorIndex] = charSetToBeInserted[charSetIndex];
-        charSetIndex++;
-        sizeIndex++;
-    }
-
-}
 
 int main (int argc, char *argv[]) {
     parseCmdLineArguments(argc, argv);
     int numberOfChars = calculateNumberOfElements();
-    // std::cout << numberOfChars << std::endl;
-    std::vector<char> charSetVector;
-    charSetVector.reserve(numberOfChars);
-    fillCharSetVector(charSetVector, 0, ANSI_CHARS);
-    std::cout << charSetVector.size() << std::endl;
-    for (int i = 0; i < charSetVector.size(); i++) {
-        std::cout << charSetVector[i] << std::endl;
-    }  
+    std::vector<char> charSetVector = buildCharSetVector(numberOfChars);
 
-    // std::cout << numberOfChars << std::endl;
-    // std::vector<char> charSetVector;
-    // charSetVector.reserve(numberOfChars);
-    // std::vector<char>::iterator vecIterator;
-    // vecIterator = charSetVector.begin();
-    // O insert tá gerando algum erro. Preciso investigar:
-    // charSetVector.insert(vecIterator, ANSI_CHARS.begin(), ANSI_CHARS.end());
-    // for (int i = 0; i < charSetVector.size(); i++) {
-    //     std::cout << charSetVector[i] << std::endl;
-    // }   
+
+    for (char element: charSetVector) {
+        std::cout << element << std::endl;
+    }
+    
+
+ 
     return 1;
 }
 
 
 
-
-
-
-
-std::vector<char> reserveCharVector (int numberOfElements) {
-    std::vector<char> reservedVector;
-    reservedVector.reserve(numberOfElements);
-    return reservedVector;
-}
 
 int calculateNumberOfElements () {
     int numberOfChars = ANSI_CHARS.size();
@@ -72,6 +46,37 @@ int calculateNumberOfElements () {
     }
     return numberOfChars;
 }
+
+std::vector<char> buildCharSetVector (int numberOfElements) {
+    std::vector<char> charSetVector;
+    charSetVector.reserve(numberOfElements);
+    fillCharSetVector(charSetVector);
+    return charSetVector;
+}
+
+void fillCharSetVector (std::vector<char>& charSetVector) {
+    std::vector<char>::iterator destinationIterator;
+    destinationIterator = charSetVector.begin();
+    copyElementsToVector(charSetVector, ANSI_CHARS, destinationIterator);
+
+    if (SPECIAL_CHARS_FLAG == true) {
+        copyElementsToVector(charSetVector, SPECIAL_CHARS, destinationIterator);
+    }
+
+}
+
+
+void copyElementsToVector (std::vector<char>& destinationVector,
+                           std::vector<char>& sourceVector,
+                           std::vector<char>::iterator& destionationIterator) {
+
+    destinationVector.insert(
+        destionationIterator, sourceVector.begin(), sourceVector.end()
+    );
+    destionationIterator = std::next(destionationIterator, sourceVector.size());
+}
+
+
 
 
 
