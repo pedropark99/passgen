@@ -72,7 +72,7 @@ void checkIfNextArgumentExists (int argc, int argumentIndex) {
 
 
 bool isCommandName (std::string argument) {
-    return argument == "main";
+    return argument == "passgen";
 }
 
 bool isLengthArgument (std::string argument) {
