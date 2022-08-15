@@ -91,7 +91,6 @@ std::string generatePassword (int passwordLength, std::vector<char>& charSet) {
     int randomIndex;
     char password[passwordLength];
     int numberOfChars = charSet.size();
-    startRandomSeed();
     for (int i = 0; i < passwordLength; i++) {
         randomIndex = getRandomNumber(numberOfChars);
         password[i] = charSet[randomIndex];
