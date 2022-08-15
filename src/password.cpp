@@ -36,7 +36,10 @@ void checkIfAllFlagsAreFalse () {
         SPECIAL_CHARS_FLAG == false;
 
     if (allFlagsAreFalse) {
-        std::cerr << "All character set flags are set to false! As a result, the program does not have a character set to generate your password!" << std::endl;
+        std::string errorMessage;
+        errorMessage = "With the arguments you gave at the command line, all character set flags are set to false! ";
+        errorMessage.insert(errorMessage.length(), "As a result, the program does not have a character set to generate your password! ");
+        std::cerr << errorMessage << std::endl;
         throw;
     }
 }

@@ -9,11 +9,11 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Sun Aug 14 10:27:33 2022
+# Make data base, printed on Mon Aug 15 12:29:01 2022
 
 # Variables
-
  
+
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
@@ -39,7 +39,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2964_JVGDBBBQNFAHXTKO
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_1724_NMLHHLLWCHCCREHY
 # environment
 !E: = e:\Users\pedro\Documents\Projetos\pkgs\passgen
 # environment
@@ -73,7 +73,7 @@ CURDIR := /e/Users/pedro/Documents/Projetos/pkgs/passgen
 # environment
 SPARK_HOME = C:\spark
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -89,10 +89,10 @@ COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
+ 
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2964
- 
+VSCODE_PID = 1724
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -157,10 +157,7 @@ USERDOMAIN = DESKTOP-JOTFKIL
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
-# environment
-__COMPAT_LAYER = DetectorsAppHealth
 # makefile
- 
 .DEFAULT_GOAL := build/passgen
 # default
 MAKE_VERSION := 4.3
@@ -176,6 +173,7 @@ PUBLIC = C:\Users\Public
 APPDATA = C:\Users\pedro\AppData\Roaming
 # environment
 HOMEDRIVE = C:
+ 
 # environment
 PROCESSOR_ARCHITECTURE = AMD64
 # makefile (from 'Makefile', line 2)
@@ -205,21 +203,21 @@ ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # default
- 
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
- 
 # environment
 PROCESSOR_REVISION = 3c03
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # variable set hash-table stats:
-# Load=97/1024=9%, Rehash=0, Collisions=10/128=8%
+ 
+# Load=96/1024=9%, Rehash=0, Collisions=10/127=8%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
 # Directories
+ 
 
 # . (device 773598794, inode 20266198323236046): 9 files, no impossibilities.
 
@@ -234,7 +232,6 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-08-14 10:25:38.9522042
 #  File has been updated.
 #  Successfully updated.
@@ -248,9 +245,7 @@ src/main.cpp:
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 22):
 	rm *.o
 
@@ -261,13 +256,9 @@ src/arguments_parser.cpp:
 #  File has not been updated.
 
 arguments_parser.o: src/arguments_parser.cpp
- 
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
- 
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 15):
 	g++ -I./include -c $(SOURCE_DIRECTORY)/arguments_parser.cpp
 
@@ -282,6 +273,7 @@ password.o: src/password.cpp
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -291,7 +283,6 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
- 
 main.o: src/main.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -328,8 +319,7 @@ src/password.cpp:
 
 # strcache performance: lookups = 33 / hit rate = 36%
 # hash-table stats:
- 
 # Load=21/8192=0%, Rehash=0, Collisions=0/33=0%
-# Finished Make data base on Sun Aug 14 10:27:33 2022
+# Finished Make data base on Mon Aug 15 12:29:01 2022
 
  

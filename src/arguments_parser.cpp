@@ -90,7 +90,11 @@ void checkIfNextArgumentExists (int argc, int argumentIndex) {
 
 
 bool isCommandName (std::string argument) {
-    return argument == "passgen" | stringEndsWith(argument, "passgen");
+    std::string commandName = "passgen";
+    if (argument.length() < commandName.length()) {
+        return false;
+    }
+    return argument == commandName | stringEndsWith(argument, commandName);
 }
 
 bool isLengthArgument (std::string argument) {
@@ -115,13 +119,13 @@ bool isUpperCaseArgument (std::string argument) {
 
 
 bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
-	int result = stringToCheck.compare(
-		stringToCheck.length() - endToCompare.length(),
-		stringToCheck.length(),
-		endToCompare
-	);
-	
-	return result == 0;
+    int result = stringToCheck.compare(
+        stringToCheck.length() - endToCompare.length(),
+        stringToCheck.length(),
+        endToCompare
+    );
+    
+    return result == 0;
 }
 
 
