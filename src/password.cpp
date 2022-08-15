@@ -70,9 +70,11 @@ void fillCharSetVector (std::vector<char>& charSetVector) {
 
 }
 
-void copyElementsToVector (std::vector<char>& destinationVector,
-                           std::vector<char>& sourceVector,
-                           std::vector<char>::iterator& destionationIterator) {
+void copyElementsToVector (
+        std::vector<char>& destinationVector,
+        std::vector<char>& sourceVector,
+        std::vector<char>::iterator& destionationIterator
+    ) {
 
     destinationVector.insert(
         destionationIterator, sourceVector.begin(), sourceVector.end()
@@ -85,7 +87,7 @@ void copyElementsToVector (std::vector<char>& destinationVector,
 
 
 
-std::string generatePassword (int passwordLength, std::vector<char> charSet) {
+std::string generatePassword (int passwordLength, std::vector<char>& charSet) {
     int randomIndex;
     char password[passwordLength];
     int numberOfChars = charSet.size();
@@ -105,4 +107,26 @@ void startRandomSeed () {
 int getRandomNumber (int maxLimit) {
     int number = std::rand() % maxLimit;
     return number;
+}
+
+
+
+
+
+
+std::vector<std::string> generateMultiplePasswords (
+        int passwordLength,
+        std::vector<char>& charSet,
+        int numberOfPasswords
+    ) {
+
+    std::vector<std::string> passwords;
+    passwords.reserve(numberOfPasswords);
+    for (int i = 0; i < numberOfPasswords; i++) {
+        passwords.insert(
+            passwords.begin(),
+            generatePassword(passwordLength, charSet)
+        );
+    }
+    return passwords;
 }

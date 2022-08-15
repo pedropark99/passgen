@@ -15,6 +15,11 @@ void copyElementsToVector (
     std::vector<char>::iterator& destionationIterator
 );
 
-std::string generatePassword (int passwordLength, std::vector<char> charSet);
+std::string generatePassword (int passwordLength, std::vector<char>& charSet);
 void startRandomSeed ();
 int getRandomNumber (int maxLimit);
+std::vector<std::string> generateMultiplePasswords (
+    int passwordLength,
+    std::vector<char>& charSet,
+    int numberOfPasswords
+);

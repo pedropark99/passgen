@@ -11,12 +11,14 @@ bool LOWER_CASE_LETTERS_FLAG = true;
 bool UPPER_CASE_LETTERS_FLAG = true;
 bool NUMBERS_FLAG = false;
 bool SPECIAL_CHARS_FLAG = false;
+int NUMBER_OF_PASSWORDS = 1;
 std::set<std::string>  CMD_LINE_ARGUMENTS = {
     "-l", "--length",
     "-s", "--special-chars",
     "-n", "--numbers",
     "-u", "--no-upper-case-letters"
-    "-o", "--no-lower-case-letters"
+    "-o", "--no-lower-case-letters",
+    "-p", "--number-of-passwords"
 };
 
 
@@ -36,7 +38,7 @@ void parseCmdLineArguments (int argc, char *argv[]) {
             checkIfNextArgumentExists(argc, argumentIndex);
             argumentIndex++;
             nextArgument = std::string(argv[argumentIndex]);
-            PASSWORD_LENGTH = castLengthValue(nextArgument);
+            PASSWORD_LENGTH = castValueToInteger(nextArgument);
             continue;
         }
         if (isSpecialCharsArgument(currentArgument)) {
@@ -53,6 +55,13 @@ void parseCmdLineArguments (int argc, char *argv[]) {
         }
         if (isUpperCaseArgument(currentArgument)) {
             UPPER_CASE_LETTERS_FLAG = false;
+            continue;
+        }
+        if (isNumberOfPasswordsArgument(currentArgument)) {
+            checkIfNextArgumentExists(argc, argumentIndex);
+            argumentIndex++;
+            nextArgument = std::string(argv[argumentIndex]);
+            NUMBER_OF_PASSWORDS = castValueToInteger(nextArgument);
             continue;
         }
 
@@ -89,6 +98,8 @@ void checkIfNextArgumentExists (int argc, int argumentIndex) {
 
 
 
+
+
 bool isCommandName (std::string argument) {
     std::string commandName = "passgen";
     if (argument.length() < commandName.length()) {
@@ -117,6 +128,10 @@ bool isUpperCaseArgument (std::string argument) {
     return argument == "-u" | argument == "--no-upper-case-letters";
 }
 
+bool isNumberOfPasswordsArgument (std::string argument) {
+    return argument == "-p" | argument == "--number-of-passwords";
+}
+
 
 bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
     int result = stringToCheck.compare(
@@ -130,13 +145,13 @@ bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
 
 
 
-int castLengthValue (std::string lengthValue) {
-    std::istringstream ss(lengthValue);
+int castValueToInteger (std::string value) {
+    std::istringstream ss(value);
     int castedValue;
     if (!(ss >> castedValue)) {
-        std::cerr << "Error: Invalid number passed to `-l` or `--length` argument: " << lengthValue << '\n';
+        std::cerr << "Invalid number passed to `-l` or `--length` argument: " << value << '\n';
     } else if (!ss.eof()) {
-        std::cerr << "Error: Trailing characters after number passed to `-l` or `--length` argument: " << lengthValue << '\n';
+        std::cerr << "Trailing characters after number passed to `-l` or `--length` argument: " << value << '\n';
     }
     return castedValue;
 }
