@@ -149,9 +149,19 @@ int castValueToInteger (std::string value) {
     std::istringstream ss(value);
     int castedValue;
     if (!(ss >> castedValue)) {
-        std::cerr << "Invalid number passed to `-l` or `--length` argument: " << value << '\n';
-    } else if (!ss.eof()) {
-        std::cerr << "Trailing characters after number passed to `-l` or `--length` argument: " << value << '\n';
+        std::string errorMessage = "Invalid number argument: ";
+        errorMessage.insert(errorMessage.length(), value);
+        throw std::invalid_argument(errorMessage);
+    }
+    if (!ss.eof()) {
+        std::string errorMessage = "Trailing characters after number argument: ";
+        errorMessage.insert(errorMessage.length(), value);
+        throw std::invalid_argument(errorMessage);
+    }
+    if (castedValue < 0) {
+        std::string errorMessage = "Negative number argument: ";
+        errorMessage.insert(errorMessage.length(), value);
+        throw std::invalid_argument(errorMessage);
     }
     return castedValue;
 }
