@@ -9,10 +9,10 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Mon Aug 15 12:29:01 2022
+ 
+# Make data base, printed on Tue Aug 16 20:09:44 2022
 
 # Variables
- 
 
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
@@ -36,10 +36,11 @@ PROCESSOR_LEVEL = 6
 PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := make
+ 
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_1724_NMLHHLLWCHCCREHY
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_6160_GOOWCTFBICQSUVFR
 # environment
 !E: = e:\Users\pedro\Documents\Projetos\pkgs\passgen
 # environment
@@ -73,7 +74,7 @@ CURDIR := /e/Users/pedro/Documents/Projetos/pkgs/passgen
 # environment
 SPARK_HOME = C:\spark
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -89,14 +90,14 @@ COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
 # automatic
- 
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1724
+VSCODE_PID = 6160
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 *F = $(notdir $*)
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -123,6 +124,7 @@ WINDIR = C:\WINDOWS
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
+ 
 # environment
 PATH = /c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/Git/cmd:/c/Program Files/nodejs:/c/spark/bin:/c/Hadoop/bin:/c/Program Files (x86)/Calibre2:/usr/bin:/c/Users/pedro/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/c/Users/pedro/AppData/Roaming/TinyTeX/bin/win32:/c/Users/pedro/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/pedro/AppData/Local/Programs/Python/Python39:/c/Users/pedro/AppData/Local/Microsoft/WindowsApps:/c/Users/pedro/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/pedro/AppData/Roaming/npm:/c/Users/pedro/AppData/Local/Programs/Quarto/bin:/c/Users/pedro/.deno/bin:/usr/bin
 # environment
@@ -173,7 +175,6 @@ PUBLIC = C:\Users\Public
 APPDATA = C:\Users\pedro\AppData\Roaming
 # environment
 HOMEDRIVE = C:
- 
 # environment
 PROCESSOR_ARCHITECTURE = AMD64
 # makefile (from 'Makefile', line 2)
@@ -187,6 +188,7 @@ COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
+ 
 TEMP = /c/Users/pedro/AppData/Local/Temp
 # environment
 VSCODE_IPC_HOOK = \\.\pipe\bdaeb877f8385725989af8bd30fcff31-1.70.1-main-sock
@@ -209,18 +211,17 @@ PROCESSOR_REVISION = 3c03
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # variable set hash-table stats:
- 
-# Load=96/1024=9%, Rehash=0, Collisions=10/127=8%
+# Load=96/1024=9%, Rehash=0, Collisions=10/128=8%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
 
 # Directories
- 
 
 # . (device 773598794, inode 20266198323236046): 9 files, no impossibilities.
 
+ 
 # 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
@@ -232,9 +233,16 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-14 10:25:38.9522042
+#  Last modified 2022-08-16 20:09:03.0008393
 #  File has been updated.
 #  Successfully updated.
+
+constants.o: src/constants.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 21):
+	g++ -I./include -c $(SOURCE_DIRECTORY)/constants.cpp
 
 # Not a target:
 src/main.cpp:
@@ -246,7 +254,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 22):
+#  recipe to execute (from 'Makefile', line 25):
 	rm *.o
 
 # Not a target:
@@ -273,7 +281,6 @@ password.o: src/password.cpp
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -290,14 +297,14 @@ main.o: src/main.cpp
 #  recipe to execute (from 'Makefile', line 12):
 	g++ -I./include -c $(SOURCE_DIRECTORY)/main.cpp
 
-build/passgen: main.o arguments_parser.o password.o
+build/passgen: main.o arguments_parser.o password.o constants.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
 	rm -r build
 	mkdir build
-	g++ -I./include -o $(BUILD_DIRECTORY)/passgen main.o arguments_parser.o password.o
+	g++ -I./include -o $(BUILD_DIRECTORY)/passgen main.o arguments_parser.o password.o constants.o
 	make clean
 
 # Not a target:
@@ -306,20 +313,27 @@ src/password.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/constants.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/31=0%
+ 
+# Load=14/1024=1%, Rehash=0, Collisions=0/36=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 203 B / avg = 9 B
-# current buf: size = 8162 B / used = 203 B / count = 21 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 233 B / avg = 10 B
+# current buf: size = 8162 B / used = 233 B / count = 23 / avg = 10 B
 
-# strcache performance: lookups = 33 / hit rate = 36%
+# strcache performance: lookups = 37 / hit rate = 37%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=0/33=0%
-# Finished Make data base on Mon Aug 15 12:29:01 2022
+# Load=23/8192=0%, Rehash=0, Collisions=0/37=0%
+# Finished Make data base on Tue Aug 16 20:09:44 2022
 
  

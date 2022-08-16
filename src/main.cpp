@@ -4,6 +4,7 @@
 
 
 #include "arguments_parser.hpp"
+#include "constants.hpp"
 #include "password.hpp"
 
 

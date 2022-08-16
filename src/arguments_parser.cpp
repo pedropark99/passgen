@@ -1,27 +1,10 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <set>
+#include <stdlib.h>
 
 #include "arguments_parser.hpp"
-
-// Global variables
-int PASSWORD_LENGTH = 10;
-bool LOWER_CASE_LETTERS_FLAG = true;
-bool UPPER_CASE_LETTERS_FLAG = true;
-bool NUMBERS_FLAG = false;
-bool SPECIAL_CHARS_FLAG = false;
-int NUMBER_OF_PASSWORDS = 1;
-std::set<std::string>  CMD_LINE_ARGUMENTS = {
-    "-l", "--length",
-    "-s", "--special-chars",
-    "-n", "--numbers",
-    "-u", "--no-upper-case-letters"
-    "-o", "--no-lower-case-letters",
-    "-p", "--number-of-passwords"
-};
-
-
+#include "constants.hpp"
 
 
 
@@ -33,6 +16,10 @@ void parseCmdLineArguments (int argc, char *argv[]) {
         currentArgument = std::string(argv[argumentIndex]);
         if (isCommandName(currentArgument)) {
             continue;
+        }
+        if (isVersionArgument(currentArgument)) {
+            printProgramVersion();
+            exit(0);
         }
         if (isLengthArgument(currentArgument)) {
             checkIfNextArgumentExists(argc, argumentIndex);
@@ -132,6 +119,10 @@ bool isNumberOfPasswordsArgument (std::string argument) {
     return argument == "-p" | argument == "--number-of-passwords";
 }
 
+bool isVersionArgument (std::string argument) {
+    return argument == "-v" | argument == "--version";
+}
+
 
 bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
     int result = stringToCheck.compare(
@@ -164,4 +155,11 @@ int castValueToInteger (std::string value) {
         throw std::invalid_argument(errorMessage);
     }
     return castedValue;
+}
+
+
+
+
+void printProgramVersion () {
+    std::cout << "Version: " << PASSGEN_VERSION << std::endl;
 }
