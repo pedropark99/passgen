@@ -51,7 +51,7 @@ passgen -l 13 -n
 k8RA2ml2vk4uX
 ```
 
-If you want, you can generate a "number-only" password by including the numbers (with the `-n` flag), and, excluding the upper and lower case ANSI letters of your caracter set (with the `-o` and `-u` flags):
+If you want, you can generate a "number-only" password by including numbers in the character set (with the `-n` flag), and, excluding the upper and lower case Basic-Latin letters (with the `-o` and `-u` flags):
 
 ```sh
 passgen -l 8 -n -o -u
@@ -69,5 +69,5 @@ The `passgen` comes with some built-in command line options. Most of these optio
 - `-n` or `--numbers`: include numbers (e.g. `0`, `1`, `2`, etc.) in the character set;
 - `-u` or `--no-upper-case-letters`: exclude the Basic-Latin upper case letters from the character set;
 - `-o` or `--no-lower-case-letters`: exclude the Basic-Latin lower case letters from the character set;
-- `-p` or `--number-of-passwords`: the number of passwords to be generated (default to 1);
+- `-p` or `--number-of-passwords`: the number of passwords to be generated (default to 1). This option expects a integer as argument;
 
