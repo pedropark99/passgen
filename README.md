@@ -1,11 +1,23 @@
 # `passgen`
 `passgen` is a command-line application (written in C++) to generate passwords. It supports all options that a password generator normally supports. You can define the password length you want, or include numbers, special characters, lower case and upper case letters in the output password.
 
-- 🛠 How to build;
+- [🛠 How to build](#🛠-how-to-build);
 - ⬇️ How to install;
 - [⚙️ Usage](#⚙️-usage);
 
+# 🛠 How to build
 
+A `Makefile` is available to build `passgen`. To use this `Makefile`, you need to have GNU `Make` and GNU `g++` compiler installed on your machine. If you have these tools already installed, you can clone this repository with:
+
+```
+git clone https://github.com/pedropark99/passgen.git
+```
+
+And, then, use the `make` command inside the `passgen` folder to compile the source code. As a result, the binary executable for `passgen` will be generated inside the `build` folder:
+
+```
+make
+```
 
 # ⚙️ Usage
 
