@@ -186,10 +186,14 @@ void printBasicProgramInfo () {
     const std::string versionPrefix = "Version: ";
     const std::string commandName = "passgen";
     const int minPrintHorizontalSpace = 10;
-    std::cout << std::left << "    " << usagePrefix
-        << std::setw(minPrintHorizontalSpace + usagePrefix.size())
+    std::cout << std::left << "    "
+        << std::setw(minPrintHorizontalSpace)
+        << usagePrefix
+        << std::setw(minPrintHorizontalSpace)
         << commandName << std::endl
-        << "    " << versionPrefix
+        << "    "
+        << std::setw(minPrintHorizontalSpace)
+        << versionPrefix
         << std::setw(minPrintHorizontalSpace)
         << PASSGEN_VERSION << std::endl;
 }
