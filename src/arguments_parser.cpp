@@ -2,6 +2,8 @@
 #include <string>
 #include <sstream>
 #include <stdlib.h>
+#include <iomanip>
+
 
 #include "arguments_parser.hpp"
 #include "constants.hpp"
@@ -19,6 +21,10 @@ void parseCmdLineArguments (int argc, char *argv[]) {
         }
         if (isVersionArgument(currentArgument)) {
             printProgramVersion();
+            exit(0);
+        }
+        if (isHelpArgument(currentArgument)) {
+            printProgramHelp();
             exit(0);
         }
         if (isLengthArgument(currentArgument)) {
@@ -123,6 +129,10 @@ bool isVersionArgument (std::string argument) {
     return argument == "-v" | argument == "--version";
 }
 
+bool isHelpArgument (std::string argument) {
+    return argument == "-h" | argument == "--help";
+}
+
 
 bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
     int result = stringToCheck.compare(
@@ -162,4 +172,24 @@ int castValueToInteger (std::string value) {
 
 void printProgramVersion () {
     std::cout << "Version: " << PASSGEN_VERSION << std::endl;
+}
+
+
+
+
+void printProgramHelp () {
+    printBasicProgramInfo();
+}
+
+void printBasicProgramInfo () {
+    const std::string usagePrefix = "Usage: ";
+    const std::string versionPrefix = "Version: ";
+    const std::string commandName = "passgen";
+    const int minPrintHorizontalSpace = 10;
+    std::cout << std::left << "    " << usagePrefix
+        << std::setw(minPrintHorizontalSpace + usagePrefix.size())
+        << commandName << std::endl
+        << "    " << versionPrefix
+        << std::setw(minPrintHorizontalSpace)
+        << PASSGEN_VERSION << std::endl;
 }

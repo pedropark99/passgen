@@ -20,7 +20,8 @@ std::set<std::string>  CMD_LINE_ARGUMENTS = {
     "-u", "--no-upper-case-letters"
     "-o", "--no-lower-case-letters",
     "-p", "--number-of-passwords",
-    "-v", "--version"
+    "-v", "--version",
+    "-h", "--help"
 };
 
 

@@ -64,10 +64,12 @@ passgen -l 8 -n -o -u
 
 The `passgen` comes with some built-in command line options. Most of these options are used to *include* or *exclude* a specific set of characters from the character set that will be used to generate your passwords:
 
-- `-l` or `--length`: the length of your password (default to 10). This option expects a integer as argument;
+- `-v` or `--version`: prints the current version of the `passgen` program;
+- `-h` or `--help`: prints the help documentation;
+- `-l` or `--length`: define the length of your password (default to 10). This option expects a integer as argument;
 - `-s` or `--special-chars`: include special characters (e.g. `$`, `%`, `#`, `@` etc.) in the character set;
+- `-p` or `--number-of-passwords`: the number of passwords to be generated (default to 1). This option expects a integer as argument;
 - `-n` or `--numbers`: include numbers (e.g. `0`, `1`, `2`, etc.) in the character set;
 - `-u` or `--no-upper-case-letters`: exclude the Basic-Latin upper case letters from the character set;
 - `-o` or `--no-lower-case-letters`: exclude the Basic-Latin lower case letters from the character set;
-- `-p` or `--number-of-passwords`: the number of passwords to be generated (default to 1). This option expects a integer as argument;
 

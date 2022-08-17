@@ -17,9 +17,12 @@ bool isLowerCaseArgument (std::string argument);
 bool isUpperCaseArgument (std::string argument);
 bool isNumberOfPasswordsArgument (std::string argument);
 bool isVersionArgument (std::string argument);
+bool isHelpArgument (std::string argument);
 
 
 int castValueToInteger (std::string value);
 bool stringEndsWith (std::string stringToCheck, std::string endToCompare);
 
 void printProgramVersion ();
+void printProgramHelp ();
+void printBasicProgramInfo ();
