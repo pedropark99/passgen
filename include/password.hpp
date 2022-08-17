@@ -1,5 +1,4 @@
 #pragma once
-
 #include <vector>
 #include <string>
 
@@ -11,7 +10,7 @@ std::vector<char> buildCharSetVector (int numberOfElements);
 void fillCharSetVector (std::vector<char>& charSetVector);
 void copyElementsToVector (
     std::vector<char>& destinationVector,
-    std::vector<char>& sourceVector,
+    const std::vector<char>& sourceVector,
     std::vector<char>::iterator& destionationIterator
 );
 

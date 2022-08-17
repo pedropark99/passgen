@@ -6,7 +6,7 @@
 
 
 #include "arguments_parser.hpp"
-#include "constants.hpp"
+#include "global_variables.hpp"
 
 
 
@@ -184,16 +184,10 @@ void printProgramHelp () {
 void printBasicProgramInfo () {
     const std::string usagePrefix = "Usage: ";
     const std::string versionPrefix = "Version: ";
-    const std::string commandName = "passgen";
     const int minPrintHorizontalSpace = 10;
-    std::cout << std::left << "    "
-        << std::setw(minPrintHorizontalSpace)
-        << usagePrefix
-        << std::setw(minPrintHorizontalSpace)
-        << commandName << std::endl
-        << "    "
-        << std::setw(minPrintHorizontalSpace)
-        << versionPrefix
-        << std::setw(minPrintHorizontalSpace)
-        << PASSGEN_VERSION << std::endl;
+    std::cout << std::left 
+        << "    " << std::setw(minPrintHorizontalSpace) << usagePrefix
+        << std::setw(minPrintHorizontalSpace) << PASSGEN_COMMAND_NAME << std::endl
+        << "    " << std::setw(minPrintHorizontalSpace) << versionPrefix
+        << std::setw(minPrintHorizontalSpace) << PASSGEN_VERSION << std::endl;
 }

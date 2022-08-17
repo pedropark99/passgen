@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "constants.hpp"
+#include "global_variables.hpp"
 #include "arguments_parser.hpp"
 #include "password.hpp"
 
@@ -72,7 +72,7 @@ void fillCharSetVector (std::vector<char>& charSetVector) {
 
 void copyElementsToVector (
         std::vector<char>& destinationVector,
-        std::vector<char>& sourceVector,
+        const std::vector<char>& sourceVector,
         std::vector<char>::iterator& destionationIterator
     ) {
 
