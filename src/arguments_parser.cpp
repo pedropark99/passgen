@@ -209,14 +209,14 @@ void printProgramBasicInfo () {
 void printProgramOptions () {
     const int minPrintHorizontalSpace = 23;
     std::cout << "Options:" << std::endl << std::endl;
-    for (int i = 0; i < CMDS.size(); i++) {
+    for (int i = 0; i < COMMAND_LINE_OPTIONS.size(); i++) {
         std::cout << std::left << "    " 
-            << CMDS[i].shortName
+            << COMMAND_LINE_OPTIONS[i].shortName
             << ", "
             << std::setw(minPrintHorizontalSpace)
-            << CMDS[i].longName
+            << COMMAND_LINE_OPTIONS[i].longName
             << " : "
-            << CMDS[i].description
+            << COMMAND_LINE_OPTIONS[i].description
             << std::endl; 
     }
 }

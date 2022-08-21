@@ -31,39 +31,12 @@ const std::set<std::string>  CMD_LINE_ARGUMENTS = {
 };
 
 
-const std::vector<std::string> SHORT_CMD_ARGS = {
-    "-l", "-p", "-u",
-    "-o", "-s", "-n",
-    "-v", "-h"
-};
-
-const std::vector<std::string> LONG_CMD_ARGS = {
-    "--length",
-    "--number-of-passwords",
-    "--no-upper-case-letters",
-    "--no-lower-case-letters",
-    "--special-chars",
-    "--numbers",
-    "--version",
-    "--help"
-};
-
-
-const std::vector<std::string> CMD_LINE_ARGUMENTS_DESCRIPTION = {
-    "The length of the password to be generated (default to 10). Expect a integer as argument;",
-    "The number of passwords to be generated (default to 1). Expect a integer as argument;",
-    "Exclude upper case Basic-Latin letters from the character set;",
-    "Exclude lower case Basic-Latin letters from the character set;",
-    "Include special characters (e.g. &, #, $, etc.) in the character set;",
-    "Include numbers (e.g. 0, 1, 2, etc.) in the character set;",
-    "Print the current version of the passgen program;",
-    "Print the help documentation;"
-};
 
 
 
 
-std::vector<CommandLineOption> CMDS = {
+
+std::vector<CommandLineOption> COMMAND_LINE_OPTIONS = {
     { "-l", "--length", "The length of the password to be generated (default to 10). Expect a integer as argument;" },
     { "-p", "--number-of-passwords", "The number of passwords to be generated (default to 1). Expect a integer as argument;" },
     { "-u", "--no-upper-case-letters", "Exclude upper case Basic-Latin letters from the character set;" },
@@ -74,6 +47,17 @@ std::vector<CommandLineOption> CMDS = {
     { "-h", "--help", "Print the help documentation;" }
 };
 
+std::vector<std::string> SHORT_CMD_ARGS;
+std::vector<std::string> LONG_CMD_ARGS;
+
+void fillCmdVectors () {
+    for (CommandLineOption option : COMMAND_LINE_OPTIONS) {
+        SHORT_CMD_ARGS.push_back(option.shortName);
+        LONG_CMD_ARGS.push_back(option.longName);
+    }
+};
+
+fillCmdVectors();
 
 
 
