@@ -25,5 +25,5 @@ bool stringEndsWith (std::string stringToCheck, std::string endToCompare);
 
 void printProgramVersion ();
 void printProgramHelp ();
-void printBasicProgramInfo ();
-void printCmdOptions ();
+void printProgramBasicInfo ();
+void printProgramOptions ();

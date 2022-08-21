@@ -63,7 +63,7 @@ void parseCmdLineArguments (int argc, char *argv[]) {
 }
 
 void checkNumberOfArguments (int argc) {
-    int numberOfCmdArguments = CMD_LINE_ARGUMENTS.size() / 2;
+    int numberOfCmdArguments = SHORT_CMD_ARGS.size();
     int lengthValueArgument = 1;
     int commandNameArgument = 1;
     int numberOfValidArguments = numberOfCmdArguments + lengthValueArgument + commandNameArgument;
@@ -73,7 +73,17 @@ void checkNumberOfArguments (int argc) {
 }
 
 void checkInvalidArgument (std::string argument) {
-    if (CMD_LINE_ARGUMENTS.find(argument) == CMD_LINE_ARGUMENTS.end()) {
+    bool notFoundInShortArguments = !(
+        std::find(
+            SHORT_CMD_ARGS.begin(), SHORT_CMD_ARGS.end(), argument
+        ) != SHORT_CMD_ARGS.end()
+    );
+    bool notFoundInLongArguments = !(
+        std::find(
+            LONG_CMD_ARGS.begin(), LONG_CMD_ARGS.end(), argument
+        ) != LONG_CMD_ARGS.end()
+    );
+    if (notFoundInShortArguments & notFoundInLongArguments) {
         std::string errorMessage;
         errorMessage = std::string("The argument  is invalid!").insert(13, argument);
         throw std::invalid_argument(errorMessage);
@@ -178,11 +188,11 @@ void printProgramVersion () {
 
 
 void printProgramHelp () {
-    printBasicProgramInfo();
-    printCmdOptions();
+    printProgramBasicInfo();
+    printProgramOptions();
 }
 
-void printBasicProgramInfo () {
+void printProgramBasicInfo () {
     const std::string usagePrefix = "Usage: ";
     const std::string versionPrefix = "Version: ";
     const int minPrintHorizontalSpace = 10;
@@ -190,10 +200,21 @@ void printBasicProgramInfo () {
         << "    " << std::setw(minPrintHorizontalSpace) << usagePrefix
         << std::setw(minPrintHorizontalSpace) << PASSGEN_COMMAND_NAME << std::endl
         << "    " << std::setw(minPrintHorizontalSpace) << versionPrefix
-        << std::setw(minPrintHorizontalSpace) << PASSGEN_VERSION << std::endl;
+        << std::setw(minPrintHorizontalSpace) << PASSGEN_VERSION 
+        << std::endl << std::endl;
 }
 
-void printCmdOptions () {
-    std::cout << std::left << std::endl 
-        << "Options: " << std::endl;
+void printProgramOptions () {
+    std::cout << "Options:" 
+        << std::endl << std::endl;
+
+    std::set<std::string>::iterator itr;
+    for (itr = CMD_LINE_ARGUMENTS.begin(); itr != CMD_LINE_ARGUMENTS.end(); itr++) {
+        std::cout << "    " << *itr << ", ";
+        itr++;
+        std::cout << *itr << " : ";
+        itr++;
+        std::cout << *itr;
+        std::cout << std::endl;
+    }
 }
