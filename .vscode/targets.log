@@ -9,7 +9,7 @@ make: *** No rule to make target 'all'.  Stop.
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Tue Aug 16 22:00:15 2022
+# Make data base, printed on Sun Aug 21 16:21:16 2022
 
 # Variables
 
@@ -36,14 +36,14 @@ PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\Wi
 # default
 MAKE_COMMAND := make
 # automatic
- 
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_6160_GOOWCTFBICQSUVFR
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_8864_TQAZQTVDJDUKFEOX
 # environment
 !E: = e:\Users\pedro\Documents\Projetos\pkgs\passgen
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
+ 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -75,7 +75,6 @@ SPARK_HOME = C:\spark
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
- 
 *D = $(patsubst %/,%,$(dir $*))
 # environment
 PROGRAMFILES = C:\Program Files
@@ -92,7 +91,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 6160
+VSCODE_PID = 8864
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -109,7 +108,6 @@ MAKE_HOST := x86_64-pc-msys
 PROGRAMDATA = C:\ProgramData
 # default
 SHELL := /bin/sh
- 
 # environment
 HOMEPATH = \Users\pedro
 # default
@@ -118,10 +116,12 @@ MAKECMDGOALS := all
 DRIVERDATA = C:\Windows\System32\Drivers\DriverData
 # environment
 COMSPEC = C:\WINDOWS\system32\cmd.exe
+ 
 # environment
 WINDIR = C:\WINDOWS
 # environment
 MAKELEVEL := 0
+ 
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
@@ -181,7 +181,6 @@ SOURCE_DIRECTORY = src
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
- 
 HOME = /home/pedro
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
@@ -216,12 +215,11 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 
 # No pattern-specific variable values.
 
- 
 # Directories
 
-# . (device 773598794, inode 20266198323236046): 13 files, no impossibilities.
+# . (device 773598794, inode 20266198323236046): 9 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -243,7 +241,6 @@ src/main.cpp:
 #  File has not been updated.
 
 clean:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -305,7 +302,6 @@ src/password.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 src/global_variables.cpp:
@@ -329,13 +325,11 @@ global_variables.o: src/global_variables.cpp
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 23 / storage = 247 B / avg = 10 B
- 
 # current buf: size = 8162 B / used = 247 B / count = 23 / avg = 10 B
- 
 
-# strcache performance: lookups = 41 / hit rate = 43%
+# strcache performance: lookups = 37 / hit rate = 37%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Tue Aug 16 22:00:15 2022
+# Load=23/8192=0%, Rehash=0, Collisions=0/37=0%
+# Finished Make data base on Sun Aug 21 16:21:16 2022
 
  

@@ -179,15 +179,21 @@ void printProgramVersion () {
 
 void printProgramHelp () {
     printBasicProgramInfo();
+    printCmdOptions();
 }
 
 void printBasicProgramInfo () {
     const std::string usagePrefix = "Usage: ";
     const std::string versionPrefix = "Version: ";
     const int minPrintHorizontalSpace = 10;
-    std::cout << std::left 
+    std::cout << "Basic Info:" << std::endl << std::left 
         << "    " << std::setw(minPrintHorizontalSpace) << usagePrefix
         << std::setw(minPrintHorizontalSpace) << PASSGEN_COMMAND_NAME << std::endl
         << "    " << std::setw(minPrintHorizontalSpace) << versionPrefix
         << std::setw(minPrintHorizontalSpace) << PASSGEN_VERSION << std::endl;
+}
+
+void printCmdOptions () {
+    std::cout << std::left << std::endl 
+        << "Options: " << std::endl;
 }
