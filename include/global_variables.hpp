@@ -20,6 +20,14 @@ extern const std::vector<std::string> SHORT_CMD_ARGS;
 extern const std::vector<std::string> LONG_CMD_ARGS;
 extern const std::vector<std::string> CMD_LINE_ARGUMENTS_DESCRIPTION;
 
+struct CommandLineOption {
+    std::string shortName;
+    std::string longName;
+    std::string description;
+};
+
+extern std::vector<CommandLineOption> CMDS;
+
 extern const std::vector<char> LOWER_CASE_LETTERS;
 extern const std::vector<char> UPPER_CASE_LETTERS;
 extern const std::vector<char> NUMBERS;

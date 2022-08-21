@@ -63,6 +63,19 @@ const std::vector<std::string> CMD_LINE_ARGUMENTS_DESCRIPTION = {
 
 
 
+std::vector<CommandLineOption> CMDS = {
+    { "-l", "--length", "The length of the password to be generated (default to 10). Expect a integer as argument;" },
+    { "-p", "--number-of-passwords", "The number of passwords to be generated (default to 1). Expect a integer as argument;" },
+    { "-u", "--no-upper-case-letters", "Exclude upper case Basic-Latin letters from the character set;" },
+    { "-o", "--no-lower-case-letters", "Exclude lower case Basic-Latin letters from the character set;" },
+    { "-s", "--special-chars", "Include special characters (e.g. &, #, $, etc.) in the character set;" },
+    { "-n", "--numbers", "Include numbers (e.g. 0, 1, 2, etc.) in the character set;" },
+    { "-v", "--version", "Print the current version of the passgen program;" },
+    { "-h", "--help", "Print the help documentation;" }
+};
+
+
+
 
 
 const std::vector<char> LOWER_CASE_LETTERS = {

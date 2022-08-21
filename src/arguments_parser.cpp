@@ -3,6 +3,7 @@
 #include <sstream>
 #include <stdlib.h>
 #include <iomanip>
+#include <algorithm>
 
 
 #include "arguments_parser.hpp"
@@ -85,7 +86,7 @@ void checkInvalidArgument (std::string argument) {
     );
     if (notFoundInShortArguments & notFoundInLongArguments) {
         std::string errorMessage;
-        errorMessage = std::string("The argument  is invalid!").insert(13, argument);
+        errorMessage = std::string("The argument  is invalid! Use `passgen -h` to see the available arguments.").insert(13, argument);
         throw std::invalid_argument(errorMessage);
     }
 }
@@ -196,25 +197,26 @@ void printProgramBasicInfo () {
     const std::string usagePrefix = "Usage: ";
     const std::string versionPrefix = "Version: ";
     const int minPrintHorizontalSpace = 10;
-    std::cout << "Basic Info:" << std::endl << std::left 
-        << "    " << std::setw(minPrintHorizontalSpace) << usagePrefix
+    std::cout << std::endl << std::left 
+        << std::setw(minPrintHorizontalSpace) << usagePrefix
         << std::setw(minPrintHorizontalSpace) << PASSGEN_COMMAND_NAME << std::endl
-        << "    " << std::setw(minPrintHorizontalSpace) << versionPrefix
+        << std::setw(minPrintHorizontalSpace) << versionPrefix
         << std::setw(minPrintHorizontalSpace) << PASSGEN_VERSION 
         << std::endl << std::endl;
 }
 
-void printProgramOptions () {
-    std::cout << "Options:" 
-        << std::endl << std::endl;
 
-    std::set<std::string>::iterator itr;
-    for (itr = CMD_LINE_ARGUMENTS.begin(); itr != CMD_LINE_ARGUMENTS.end(); itr++) {
-        std::cout << "    " << *itr << ", ";
-        itr++;
-        std::cout << *itr << " : ";
-        itr++;
-        std::cout << *itr;
-        std::cout << std::endl;
+void printProgramOptions () {
+    const int minPrintHorizontalSpace = 23;
+    std::cout << "Options:" << std::endl << std::endl;
+    for (int i = 0; i < CMDS.size(); i++) {
+        std::cout << std::left << "    " 
+            << CMDS[i].shortName
+            << ", "
+            << std::setw(minPrintHorizontalSpace)
+            << CMDS[i].longName
+            << " : "
+            << CMDS[i].description
+            << std::endl; 
     }
 }
