@@ -4,7 +4,6 @@
 ## Table of contents
 
 - [🛠 How to build](#🛠-how-to-build);
-- ⬇️ How to install;
 - [⚙️ Usage](#⚙️-usage);
 
 ## 🛠 How to build
