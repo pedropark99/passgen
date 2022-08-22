@@ -89,7 +89,8 @@ void copyElementsToVector (
 
 std::string generatePassword (int passwordLength, std::vector<char>& charSet) {
     int randomIndex;
-    char password[passwordLength];
+    char password[passwordLength + 1];
+    password[passwordLength] = '\0';
     int numberOfChars = charSet.size();
     for (int i = 0; i < passwordLength; i++) {
         randomIndex = getRandomNumber(numberOfChars);
