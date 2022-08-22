@@ -26,7 +26,7 @@ int main (int argc, char *argv[]) {
         std::string password;
         startRandomSeed();
         password = generatePassword(PASSWORD_LENGTH, charSetVector);
-        std::cout << password << '\0' << std::endl;
+        std::cout << password << std::endl;
     }
 
     return 1;
