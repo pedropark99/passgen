@@ -10,8 +10,8 @@ std::vector<char> buildCharSetVector (int numberOfElements);
 void fillCharSetVector (std::vector<char>& charSetVector);
 void copyElementsToVector (
     std::vector<char>& destinationVector,
-    const std::vector<char>& sourceVector,
-    std::vector<char>::iterator& destionationIterator
+    std::vector<char>::iterator& destionationIterator,
+    const std::vector<char>& sourceVector
 );
 
 std::string generatePassword (int passwordLength, std::vector<char>& charSet);

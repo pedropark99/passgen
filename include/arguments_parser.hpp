@@ -23,6 +23,7 @@ bool isHelpArgument (std::string argument);
 int castValueToInteger (std::string value);
 bool stringEndsWith (std::string stringToCheck, std::string endToCompare);
 
+
 void printProgramVersion ();
 void printProgramHelp ();
 void printProgramBasicInfo ();

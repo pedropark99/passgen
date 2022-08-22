@@ -19,24 +19,10 @@ bool NUMBERS_FLAG = false;
 bool SPECIAL_CHARS_FLAG = false;
 int NUMBER_OF_PASSWORDS = 1;
 
-const std::set<std::string>  CMD_LINE_ARGUMENTS = {
-    "-l", "--length",
-    "-p", "--number-of-passwords",
-    "-u", "--no-upper-case-letters",
-    "-o", "--no-lower-case-letters",
-    "-s", "--special-chars",
-    "-n", "--numbers",
-    "-v", "--version",
-    "-h", "--help"
-};
 
 
 
-
-
-
-
-std::vector<CommandLineOption> COMMAND_LINE_OPTIONS = {
+const std::vector<CommandLineOption> COMMAND_LINE_OPTIONS = {
     { "-l", "--length", "The length of the password to be generated (default to 10). Expect a integer as argument;" },
     { "-p", "--number-of-passwords", "The number of passwords to be generated (default to 1). Expect a integer as argument;" },
     { "-u", "--no-upper-case-letters", "Exclude upper case Basic-Latin letters from the character set;" },
@@ -47,17 +33,7 @@ std::vector<CommandLineOption> COMMAND_LINE_OPTIONS = {
     { "-h", "--help", "Print the help documentation;" }
 };
 
-std::vector<std::string> SHORT_CMD_ARGS;
-std::vector<std::string> LONG_CMD_ARGS;
 
-void fillCmdVectors () {
-    for (CommandLineOption option : COMMAND_LINE_OPTIONS) {
-        SHORT_CMD_ARGS.push_back(option.shortName);
-        LONG_CMD_ARGS.push_back(option.longName);
-    }
-};
-
-fillCmdVectors();
 
 
 

@@ -64,7 +64,7 @@ void parseCmdLineArguments (int argc, char *argv[]) {
 }
 
 void checkNumberOfArguments (int argc) {
-    int numberOfCmdArguments = SHORT_CMD_ARGS.size();
+    int numberOfCmdArguments = COMMAND_LINE_OPTIONS.size();
     int lengthValueArgument = 1;
     int commandNameArgument = 1;
     int numberOfValidArguments = numberOfCmdArguments + lengthValueArgument + commandNameArgument;
@@ -73,20 +73,25 @@ void checkNumberOfArguments (int argc) {
     }
 }
 
-void checkInvalidArgument (std::string argument) {
-    bool notFoundInShortArguments = !(
-        std::find(
-            SHORT_CMD_ARGS.begin(), SHORT_CMD_ARGS.end(), argument
-        ) != SHORT_CMD_ARGS.end()
-    );
-    bool notFoundInLongArguments = !(
-        std::find(
-            LONG_CMD_ARGS.begin(), LONG_CMD_ARGS.end(), argument
-        ) != LONG_CMD_ARGS.end()
-    );
-    if (notFoundInShortArguments & notFoundInLongArguments) {
-        std::string errorMessage;
-        errorMessage = std::string("The argument  is invalid! Use `passgen -h` to see the available arguments.").insert(13, argument);
+bool searchInCmdOptions (std::string optionToSearch) {
+    bool optionFound;
+    for (CommandLineOption option : COMMAND_LINE_OPTIONS) {
+        optionFound = optionToSearch == option.shortName | optionToSearch == option.longName;
+        if (optionFound) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+void checkInvalidArgument (std::string option) {
+    bool notFoundInCmdOptions;
+    notFoundInCmdOptions = !searchInCmdOptions(option);
+    if (notFoundInCmdOptions) {
+        std::string errorMessage = "The option `` is invalid! Use `passgen -h` to see the available command-line options.";
+        errorMessage.insert(12, option);
+        errorMessage = std::string(errorMessage);
         throw std::invalid_argument(errorMessage);
     }
 }
@@ -181,10 +186,13 @@ int castValueToInteger (std::string value) {
 
 
 
+
+
+
+
 void printProgramVersion () {
     std::cout << "Version: " << PASSGEN_VERSION << std::endl;
 }
-
 
 
 
@@ -202,7 +210,7 @@ void printProgramBasicInfo () {
         << std::setw(minPrintHorizontalSpace) << PASSGEN_COMMAND_NAME << std::endl
         << std::setw(minPrintHorizontalSpace) << versionPrefix
         << std::setw(minPrintHorizontalSpace) << PASSGEN_VERSION 
-        << std::endl << std::endl;
+        << std::endl << std::endl << std::endl;
 }
 
 
@@ -215,7 +223,7 @@ void printProgramOptions () {
             << ", "
             << std::setw(minPrintHorizontalSpace)
             << COMMAND_LINE_OPTIONS[i].longName
-            << " : "
+            << " - "
             << COMMAND_LINE_OPTIONS[i].description
             << std::endl; 
     }

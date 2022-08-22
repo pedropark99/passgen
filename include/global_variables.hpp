@@ -15,9 +15,6 @@ extern bool NUMBERS_FLAG;
 extern bool SPECIAL_CHARS_FLAG;
 extern int NUMBER_OF_PASSWORDS;
 
-extern const std::set<std::string> CMD_LINE_ARGUMENTS;
-extern std::vector<std::string> SHORT_CMD_ARGS;
-extern std::vector<std::string> LONG_CMD_ARGS;
 
 struct CommandLineOption {
     std::string shortName;
@@ -25,7 +22,7 @@ struct CommandLineOption {
     std::string description;
 };
 
-extern std::vector<CommandLineOption> COMMAND_LINE_OPTIONS;
+extern const std::vector<CommandLineOption> COMMAND_LINE_OPTIONS;
 
 extern const std::vector<char> LOWER_CASE_LETTERS;
 extern const std::vector<char> UPPER_CASE_LETTERS;

@@ -56,24 +56,24 @@ void fillCharSetVector (std::vector<char>& charSetVector) {
     destinationIterator = charSetVector.begin();
 
     if (LOWER_CASE_LETTERS_FLAG == true) {
-        copyElementsToVector(charSetVector, LOWER_CASE_LETTERS, destinationIterator);
+        copyElementsToVector(charSetVector, destinationIterator, LOWER_CASE_LETTERS);
     }
     if (UPPER_CASE_LETTERS_FLAG == true) {
-        copyElementsToVector(charSetVector, UPPER_CASE_LETTERS, destinationIterator);
+        copyElementsToVector(charSetVector, destinationIterator, UPPER_CASE_LETTERS);
     }
     if (NUMBERS_FLAG == true) {
-        copyElementsToVector(charSetVector, NUMBERS, destinationIterator);
+        copyElementsToVector(charSetVector, destinationIterator, NUMBERS);
     }
     if (SPECIAL_CHARS_FLAG == true) {
-        copyElementsToVector(charSetVector, SPECIAL_CHARS, destinationIterator);
+        copyElementsToVector(charSetVector, destinationIterator, SPECIAL_CHARS);
     }
 
 }
 
 void copyElementsToVector (
         std::vector<char>& destinationVector,
-        const std::vector<char>& sourceVector,
-        std::vector<char>::iterator& destionationIterator
+        std::vector<char>::iterator& destionationIterator,
+        const std::vector<char>& sourceVector
     ) {
 
     destinationVector.insert(
