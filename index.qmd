@@ -10,6 +10,6 @@ title: "`passgen`"
 
 # Features
 
-- `passgen` uses only C++ 11 Standard Library, so, is very easy build;
-- Have a option to generate multiple passwords at once;
-- Can generate "number-only", or, "special-chars-only" passwords;
+- `passgen` uses only C++ 11 Standard Library. As a result, it is very easy to build;
+- It have a option to generate multiple passwords at once;
+- Can produce "number-only", or, "special-chars-only" passwords;
