@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "passgen",
+    "section": "",
+    "text": "define the length of the password to be generated;\ninclude numbers and special characters in the password;\nexclude upper and lower case letters;\n\n\nFeatures\n\npassgen uses only C++ 11 Standard Library, so, is very easy build;\nHave a option to generate multiple passwords at once;\nCan generate “number-only”, or, “special-chars-only” passwords;"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "passgen",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]

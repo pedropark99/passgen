@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "passgen"
+  repo-url: https://github.com/pedropark99/passgen
+  repo-actions: [edit, issue]
+  page-footer:
+    left: "Website for `passgen` command-line application, by Pedro Duarte Faria."
+    right:
+      - icon: github
+        href: https://github.com/pedropark99/passgen
+      - icon: twitter
+        href: https://twitter.com/PedroPark9
+      - icon: envelope
+        href: mailto:pedropark99@gmail.com
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
