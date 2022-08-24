@@ -1,13 +1,18 @@
 ---
 title: "Documentation"
 engine: knitr
+execute:
+    lang: bash
 ---
 
+```{r}
+source("../cmd_knit_engine.R", encoding = "UTF-8")
+```
 
 
-```{bash}
+
+```{cmd_passgen}
 #| include: true
-cd ../../build
 echo hello!
 ```
 
@@ -15,9 +20,7 @@ echo hello!
 
 `passgen` is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of `passgen`, is to just give the program name
 
-```{bash}
-#| eval: false
-cd ../../build
-./passgen
+```{cmd_passgen}
+passgen
 ```
 
