@@ -2,8 +2,7 @@ library(knitr)
 library(fs)
 
 get_build_directory <- function(){
-  current_dir <- getwd()
-  build_dir <- fs::path(current_dir, "..", "..", "build")
+  build_dir <- fs::path_abs("./../../build")
   return(build_dir)
 }
 
