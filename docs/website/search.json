@@ -4,7 +4,7 @@
     "href": "docs/pages/reference.html",
     "title": "Documentation",
     "section": "",
-    "text": "echo hello!\n\nMicrosoft Windows [versÆo 10.0.19043.1889]\n(c) Microsoft Corporation. Todos os direitos reservados.\n\nC:\\Users\\pedro.duarte\\Documents\\projects\\passgen\\docs\\pages>cd C:/Users/pedro.duarte/Documents/projects/passgen/build\n\nC:\\Users\\pedro.duarte\\Documents\\projects\\passgen\\build>echo hello!\nhello!\n\nC:\\Users\\pedro.duarte\\Documents\\projects\\passgen\\build>\n\n\n\nIntroduction\npassgen is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of passgen, is to just give the program name\n\npassgen\n\nMicrosoft Windows [versÆo 10.0.19043.1889]\n(c) Microsoft Corporation. Todos os direitos reservados.\n\nC:\\Users\\pedro.duarte\\Documents\\projects\\passgen\\docs\\pages>cd C:/Users/pedro.duarte/Documents/projects/passgen/build\n\nC:\\Users\\pedro.duarte\\Documents\\projects\\passgen\\build>passgen\njxTFsholXZ\n\nC:\\Users\\pedro.duarte\\Documents\\projects\\passgen\\build>"
+    "text": "Introduction\npassgen is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of passgen, is to just give the program name\n\n\nterminal$ passgen\nzYXzpoODYB"
   },
   {
     "objectID": "index.html",

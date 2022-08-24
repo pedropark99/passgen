@@ -2,25 +2,22 @@
 title: "Documentation"
 engine: knitr
 execute:
+    echo: false
     lang: bash
 ---
 
 ```{r}
+#| include: false
 source("../cmd_knit_engine.R", encoding = "UTF-8")
 ```
 
-
-
-```{cmd_passgen}
-#| include: true
-echo hello!
-```
 
 # Introduction
 
 `passgen` is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of `passgen`, is to just give the program name
 
 ```{cmd_passgen}
+#| eval: false
 passgen
 ```
 
