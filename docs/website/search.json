@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "docs/pages/reference.html",
+    "href": "docs/pages/reference.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Introduction\npassgen is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of passgen, is to just give the program name\n\ncd ../../build\n./passgen"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "passgen",
+    "section": "",
+    "text": "Features\n\npassgen uses only C++ Standard Library. As a result, it is very easy to build;\nIt have a option to generate multiple passwords at once;\nCan produce “number-only”, or, “special-chars-only” passwords;"
+  }
+]

@@ -1,0 +1,23 @@
+---
+title: "Documentation"
+engine: knitr
+---
+
+
+
+```{bash}
+#| include: true
+cd ../../build
+echo hello!
+```
+
+# Introduction
+
+`passgen` is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of `passgen`, is to just give the program name
+
+```{bash}
+#| eval: false
+cd ../../build
+./passgen
+```
+
