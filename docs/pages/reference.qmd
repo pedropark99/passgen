@@ -1,5 +1,4 @@
 ---
-title: "Documentation"
 engine: knitr
 execute:
     echo: false
@@ -14,10 +13,99 @@ source("../cmd_knit_engine.R", encoding = "UTF-8")
 
 # Introduction
 
-`passgen` is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of `passgen`, is to just give the program name
+`passgen` is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of `passgen`, is to just give the program name, like in the example below:
 
 ```{cmd_passgen}
 #| eval: false
 passgen
 ```
 
+**By default**, `passgen` will generate a password with 10 characters. The characters included in your password, will depend on the chosen character set. You can change the behaviour of `passgen`, by using one (or many) of the available options. In summary, `passgen` supports the following command-line options:
+
+- `-l` or `--length`: define the length of your password (default to 10). This option expects a integer as argument;
+- `-p` or `--number-of-passwords`: the number of passwords to be generated (default to 1). This option expects a integer as argument;
+- `-u` or `--no-upper-case-letters`: exclude the Basic-Latin upper case letters from the character set;
+- `-o` or `--no-lower-case-letters`: exclude the Basic-Latin lower case letters from the character set;
+- `-s` or `--special-chars`: include special characters (e.g. `$`, `%`, `#`, `@` etc.) in the character set;
+- `-n` or `--numbers`: include numbers (e.g. `0`, `1`, `2`, etc.) in the character set;
+- `-v` or `--version`: prints the current version of the `passgen` program;
+- `-h` or `--help`: prints the help documentation;
+
+
+
+# Changing the length of the password
+
+The length of the password is defined by the `PASSWORD_LENGTH` global variable. By default, this variable is set to 10, but, you can produce longer or shorter passwords by using the `-l` option, which will override the value of `PASSWORD_LENGTH`.
+
+With this option, you can specify the exact number of characters you want in the resulting password. This options expects that you provide a integer argument, like in the example below, where we produce a 35 characters long password:
+
+```{cmd_passgen}
+passgen -l 35
+```
+
+If you prefer, you can use the long version of the option too, with `--length`:
+
+```{cmd_passgen}
+passgen --length 5
+```
+
+
+# Changing the used character set
+
+By default, `passgen` uses a combination of lower and upper case Basic-Latin letters (i.e. "A-Z" and "a-z"). But you can use the available command-line options to change this character set, in order to produce passwords with different kind of characters.
+
+## Including numbers
+
+You can include numbers (i.e. "0-9") in the character set, by including the `-n` option, like this:
+
+```{cmd_passgen}
+passgen -n -l 25
+```
+
+Or, the long version of the option:
+
+```{cmd_passgen}
+passgen --numbers -l 25
+```
+
+## Including special characters
+
+You can include special characters (e.g. "!", "@", "#", etc.) in the character set, by including the `-s` option, like this:
+
+```{cmd_passgen}
+passgen -s -l 25
+```
+
+Or, the long version of the option:
+
+```{cmd_passgen}
+passgen --special-chars
+```
+
+## Excluding lower and upper case Basic-Latin letters
+
+You can not only include specific set of characters, but, you can also exclude them. By default, `passgen` starts with a set of characters containing the lower and upper case Basic-Latin letters, however, you can exclude them with the `-o` and `-u` options.
+
+```{cmd_passgen}
+passgen -o
+passgen -u
+```
+
+Be careful to not remove **all** characters from the character set. In other words, if you remove the upper and lower case letters at the same time, and, not provide any set of characters to replace the void created, the program will issue an error warning about this mistake:
+
+```{cmd_passgen}
+passgen -o -u
+```
+
+## Producing "numbers-only" passwords
+
+As an example, you can produce a "numbers-only" password, by passing a character set composed only of numbers to `passgen`. You can do this, by excluding the lower and upper case Basic-Latin letters, and, including the numbers with options `-o`, `-u` and `-n`:
+
+```{cmd_passgen}
+passgen -o -u -n
+```
+
+
+# Producing multiple passwords
+
+By default, `passgen` will generate a single password. However.

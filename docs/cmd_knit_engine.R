@@ -23,7 +23,11 @@ cmd_knit_engine <- function(options){
   code <- options$code
   build_dir <- get_build_directory()
   change_dir_cmd <- paste("cd", build_dir)
-  out <- system2("cmd", input = c(change_dir_cmd, code), stdout = TRUE)
+  out <- system2(
+    "cmd",
+    input = c(change_dir_cmd, code),
+    stdout = TRUE, stderr = TRUE
+  )
   out <- get_cmd_output(out)
   knitr::engine_output(options, code, out)
 }
