@@ -33,5 +33,3 @@ cmd_knit_engine <- function(options){
 }
 
 knitr::knit_engines$set(cmd_passgen = cmd_knit_engine)
-
-#system2("cmd", input = c("passgen -p 5"), stdout = TRUE)
