@@ -35,7 +35,7 @@ passgen
 
 # Changing the length of the password
 
-The length of the password is defined by the `PASSWORD_LENGTH` global variable. By default, this variable is set to 10, but, you can produce longer or shorter passwords by using the `-l` option, which will override the value of `PASSWORD_LENGTH`.
+The length of the password is defined by the `PASSWORD_LENGTH` global variable. By default, this variable is set to 10, however, you can set it to whatever value you want, by using the `-l` option.
 
 With this option, you can specify the exact number of characters you want in the resulting password. This options expects that you provide a integer argument, like in the example below, where we produce a 35 characters long password:
 
@@ -52,7 +52,7 @@ passgen --length 5
 
 # Changing the used character set
 
-By default, `passgen` uses a combination of lower and upper case Basic-Latin letters (i.e. "A-Z" and "a-z"). But you can use the available command-line options to change this character set, in order to produce passwords with different kind of characters.
+By default, `passgen` uses a combination of lower and upper case Basic-Latin letters (i.e. "A-Z" and "a-z"). But you can use the available command-line options to change this character set, in order to produce passwords with different kinds of characters.
 
 ## Including numbers
 
@@ -84,7 +84,7 @@ passgen --special-chars
 
 ## Excluding lower and upper case Basic-Latin letters
 
-You can not only include specific set of characters, but, you can also exclude them. By default, `passgen` starts with a set of characters containing the lower and upper case Basic-Latin letters, however, you can exclude them with the `-o` and `-u` options.
+You can not only include specific set of characters, but, you can also exclude them. By default, `passgen` starts with a set of characters containing the lower and upper case Basic-Latin letters, however, you can exclude them with the `-o` and `-u` options (or its longer versions: `--no-lower-case-letters` and `--no-upper-case-letters`).
 
 ```{cmd_passgen}
 passgen -o
@@ -108,4 +108,22 @@ passgen -o -u -n
 
 # Producing multiple passwords
 
-By default, `passgen` will generate a single password. However.
+By default, `passgen` will generate a single password. However, you can produce multiple password at the same time, by using the `-p` option (or its long version `--number-of-passwords`). This option expects a integer argument like the `-l` option. In the following example, we are generating 6 different passwords with a single command:
+
+
+```{cmd_passgen}
+passgen -p 6
+```
+
+Is important to highlight that, the options that you pass to `passgen` are disseminated to all of the generated passwords. In other words, if you use the option `-p` with the value of 10, and, the `-l` option with the value of 15, `passgen` will produce 10 different passwords that are 15 characters long:
+
+```{cmd_passgen}
+passgen -p 10 -l 15
+```
+
+This also means that `passgen` will use the same character set you built with the command-line options, to generate all of the different passwords. For example, if you use the options `-n` and `-o` like in the example below, `passgen` will generate 4 different passwords that have a combination of numbers and upper case Basic-Latin letters:
+
+
+```{cmd_passgen}
+passgen -p 4 -n -o
+```
