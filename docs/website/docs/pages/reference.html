@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>passgen - Documentation</title>
+<title>passgen – reference</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,69 +15,6 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -174,41 +111,170 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#changing-the-length-of-the-password" id="toc-changing-the-length-of-the-password" class="nav-link" data-scroll-target="#changing-the-length-of-the-password">Changing the length of the password</a></li>
+  <li><a href="#changing-the-used-character-set" id="toc-changing-the-used-character-set" class="nav-link" data-scroll-target="#changing-the-used-character-set">Changing the used character set</a>
+  <ul class="collapse">
+  <li><a href="#including-numbers" id="toc-including-numbers" class="nav-link" data-scroll-target="#including-numbers">Including numbers</a></li>
+  <li><a href="#including-special-characters" id="toc-including-special-characters" class="nav-link" data-scroll-target="#including-special-characters">Including special characters</a></li>
+  <li><a href="#excluding-lower-and-upper-case-basic-latin-letters" id="toc-excluding-lower-and-upper-case-basic-latin-letters" class="nav-link" data-scroll-target="#excluding-lower-and-upper-case-basic-latin-letters">Excluding lower and upper case Basic-Latin letters</a></li>
+  <li><a href="#producing-numbers-only-passwords" id="toc-producing-numbers-only-passwords" class="nav-link" data-scroll-target="#producing-numbers-only-passwords">Producing “numbers-only” passwords</a></li>
+  </ul></li>
+  <li><a href="#producing-multiple-passwords" id="toc-producing-multiple-passwords" class="nav-link" data-scroll-target="#producing-multiple-passwords">Producing multiple passwords</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pedropark99/passgen/edit/main/docs/pages/reference.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pedropark99/passgen/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Documentation</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-    
-  </div>
-  
-
-</header>
-
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../../build</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> hello!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>hello!</code></pre>
-</div>
-</div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p><code>passgen</code> is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of <code>passgen</code>, is to just give the program name</p>
+<p><code>passgen</code> is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of <code>passgen</code>, is to just give the program name, like in the example below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../../build</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./passgen</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen
+FYJNoJUqgY</code></pre>
+</div>
+</div>
+<p><strong>By default</strong>, <code>passgen</code> will generate a password with 10 characters. The characters included in your password, will depend on the chosen character set. You can change the behaviour of <code>passgen</code>, by using one (or many) of the available options. In summary, <code>passgen</code> supports the following command-line options:</p>
+<ul>
+<li><code>-l</code> or <code>--length</code>: define the length of your password (default to 10). This option expects a integer as argument;</li>
+<li><code>-p</code> or <code>--number-of-passwords</code>: the number of passwords to be generated (default to 1). This option expects a integer as argument;</li>
+<li><code>-u</code> or <code>--no-upper-case-letters</code>: exclude the Basic-Latin upper case letters from the character set;</li>
+<li><code>-o</code> or <code>--no-lower-case-letters</code>: exclude the Basic-Latin lower case letters from the character set;</li>
+<li><code>-s</code> or <code>--special-chars</code>: include special characters (e.g.&nbsp;<code>$</code>, <code>%</code>, <code>#</code>, <code>@</code> etc.) in the character set;</li>
+<li><code>-n</code> or <code>--numbers</code>: include numbers (e.g.&nbsp;<code>0</code>, <code>1</code>, <code>2</code>, etc.) in the character set;</li>
+<li><code>-v</code> or <code>--version</code>: prints the current version of the <code>passgen</code> program;</li>
+<li><code>-h</code> or <code>--help</code>: prints the help documentation;</li>
+</ul>
+</section>
+<section id="changing-the-length-of-the-password" class="level1">
+<h1>Changing the length of the password</h1>
+<p>The length of the password is defined by the <code>PASSWORD_LENGTH</code> global variable. By default, this variable is set to 10, however, you can set it to whatever value you want, by using the <code>-l</code> option.</p>
+<p>With this option, you can specify the exact number of characters you want in the resulting password. This options expects that you provide a integer argument, like in the example below, where we produce a 35 characters long password:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -l 35
+SigBiZwwtvqOSniFiLvMelaULHWEFecijCT</code></pre>
+</div>
+</div>
+<p>If you prefer, you can use the long version of the option too, with <code>--length</code>:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen --length 5
+Esbod</code></pre>
+</div>
+</div>
+</section>
+<section id="changing-the-used-character-set" class="level1">
+<h1>Changing the used character set</h1>
+<p>By default, <code>passgen</code> uses a combination of lower and upper case Basic-Latin letters (i.e.&nbsp;“A-Z” and “a-z”). But you can use the available command-line options to change this character set, in order to produce passwords with different kinds of characters.</p>
+<section id="including-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="including-numbers">Including numbers</h2>
+<p>You can include numbers (i.e.&nbsp;“0-9”) in the character set, by including the <code>-n</code> option, like this:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -n -l 25
+MiF8hhnHPeyt4fjk4OVfRQqlW</code></pre>
+</div>
+</div>
+<p>Or, the long version of the option:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen --numbers -l 25
+ko6tGNz4otcFAHH5N627zwUzH</code></pre>
+</div>
+</div>
+</section>
+<section id="including-special-characters" class="level2">
+<h2 class="anchored" data-anchor-id="including-special-characters">Including special characters</h2>
+<p>You can include special characters (e.g.&nbsp;“!”, “@”, “#”, etc.) in the character set, by including the <code>-s</code> option, like this:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -s -l 25
+}oHD~_-FA@[TKahb;iEgqXpPv</code></pre>
+</div>
+</div>
+<p>Or, the long version of the option:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen --special-chars
+am~%-ZE$wS</code></pre>
+</div>
+</div>
+</section>
+<section id="excluding-lower-and-upper-case-basic-latin-letters" class="level2">
+<h2 class="anchored" data-anchor-id="excluding-lower-and-upper-case-basic-latin-letters">Excluding lower and upper case Basic-Latin letters</h2>
+<p>You can not only include specific set of characters, but, you can also exclude them. By default, <code>passgen</code> starts with a set of characters containing the lower and upper case Basic-Latin letters, however, you can exclude them with the <code>-o</code> and <code>-u</code> options (or its longer versions: <code>--no-lower-case-letters</code> and <code>--no-upper-case-letters</code>).</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -o
+EXWSTFPCZO
+
+terminal$ passgen -u
+pgsfnvslkl</code></pre>
+</div>
+</div>
+<p>Be careful to not remove <strong>all</strong> characters from the character set. In other words, if you remove the upper and lower case letters at the same time, and, not provide any set of characters to replace the void created, the program will issue an error warning about this mistake:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -o -u
+With the arguments you gave at the command line, all character set flags are set to false! As a result, the program does not have a character set to generate your password! 
+terminate called without an active exception</code></pre>
+</div>
+</div>
+</section>
+<section id="producing-numbers-only-passwords" class="level2">
+<h2 class="anchored" data-anchor-id="producing-numbers-only-passwords">Producing “numbers-only” passwords</h2>
+<p>As an example, you can produce a “numbers-only” password, by passing a character set composed only of numbers to <code>passgen</code>. You can do this, by excluding the lower and upper case Basic-Latin letters, and, including the numbers with options <code>-o</code>, <code>-u</code> and <code>-n</code>:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -o -u -n
+7463617876</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="producing-multiple-passwords" class="level1">
+<h1>Producing multiple passwords</h1>
+<p>By default, <code>passgen</code> will generate a single password. However, you can produce multiple password at the same time, by using the <code>-p</code> option (or its long version <code>--number-of-passwords</code>). This option expects a integer argument like the <code>-l</code> option. In the following example, we are generating 6 different passwords with a single command:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -p 6
+qOVLbzFjAt
+nFWrpOlFeF
+gRCBQdlGbn
+xFRiIqBtDY
+DdmoMTPJxL
+BkFUUpYJxW</code></pre>
+</div>
+</div>
+<p>Is important to highlight that, the options that you pass to <code>passgen</code> are disseminated to all of the generated passwords. In other words, if you use the option <code>-p</code> with the value of 10, and, the <code>-l</code> option with the value of 15, all of the 10 different passwords generated by <code>passgen</code> will be 15 characters long:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -p 10 -l 15
+LuIabYSSNCUgzCg
+WBYsiRGYHXCaRJH
+UFcSRxIJFjBGIJE
+YkRsayBpYGTvCJO
+hloXSZyBrlhuMXC
+HoEguxybRIkrsWA
+tawZpGgTabtBClk
+NBtWrzVMHwCawNh
+DENibCiiKgMbIyd
+OuAIOFAQhtzBidQ</code></pre>
+</div>
+</div>
+<p>This also means that <code>passgen</code> will use the same character set you built with the command-line options, to generate your passwords. For example, if you uses the options <code>-n</code> and <code>-o</code> like in the example below, <code>passgen</code> will generate 4 different passwords with a combination of numbers and upper case Basic-Latin letters:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -p 4 -n -o
+M9T95999NX
+0FRY5RIZAJ
+3PIF48H556
+7CRVHWWV18</code></pre>
+</div>
 </div>
 
 
