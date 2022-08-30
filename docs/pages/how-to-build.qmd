@@ -1,0 +1,30 @@
+---
+engine: knitr
+execute:
+    eval: false
+    lang: bash
+---
+
+```{r}
+#| include: false
+source("../cmd_knit_engine.R", encoding = "UTF-8")
+```
+
+# How to build `passgen`
+
+Because `passgen` uses only C++ Standard Library, you can pretty easily build the application with a recent C++ compiler. The [official repository of the project](https://github.com/pedropark99/passgen) comes with a `Makefile`, which contains all the necessary commands to build `passgen` from source.
+
+To run this `Makefile`, you need to have GNU `Make` installed in you machine. Furthermore, this `Makefile` contains commands to the GNU `g++` compiler. So, if you do not have the GNU `g++` compiler installed in your system, you will likely face errors as you try to run this `Makefile`. 
+
+Anyway, to run this `Makefile` and build `passgen`, you can first, clone the git repository with `git clone`:
+
+```{bash}
+git clone https://github.com/pedropark99/passgen.git
+```
+
+Then, you can change to the root directory of the project, and, use the `make` command to build it from source:
+
+```{bash}
+cd passgen
+make
+```

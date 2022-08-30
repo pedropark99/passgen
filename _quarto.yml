@@ -13,6 +13,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: docs/pages/how-to-build.qmd
+        text: How to build
       - href: docs/pages/reference.qmd
         text: Documentation
     right:

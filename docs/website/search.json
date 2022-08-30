@@ -1,38 +1,45 @@
 [
   {
+    "objectID": "docs/pages/how-to-build.html",
+    "href": "docs/pages/how-to-build.html",
+    "title": "passgen",
+    "section": "",
+    "text": "Because passgen uses only C++ Standard Library, you can pretty easily build the application with a recent C++ compiler. The official repository of the project comes with a Makefile, which contains all the necessary commands to build passgen from source.\nTo run this Makefile, you need to have GNU Make installed in you machine. Furthermore, this Makefile contains commands to the GNU g++ compiler. So, if you do not have the GNU g++ compiler installed in your system, you will likely face errors as you try to run this Makefile.\nAnyway, to run this Makefile and build passgen, you can first, clone the git repository with git clone:\n\ngit clone https://github.com/pedropark99/passgen.git\n\nThen, you can change to the root directory of the project, and, use the make command to build it from source:\n\ncd passgen\nmake"
+  },
+  {
     "objectID": "docs/pages/reference.html",
     "href": "docs/pages/reference.html",
     "title": "passgen",
     "section": "",
-    "text": "passgen is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of passgen, is to just give the program name, like in the example below:\n\n\nterminal$ passgen\nFYJNoJUqgY\n\n\nBy default, passgen will generate a password with 10 characters. The characters included in your password, will depend on the chosen character set. You can change the behaviour of passgen, by using one (or many) of the available options. In summary, passgen supports the following command-line options:\n\n-l or --length: define the length of your password (default to 10). This option expects a integer as argument;\n-p or --number-of-passwords: the number of passwords to be generated (default to 1). This option expects a integer as argument;\n-u or --no-upper-case-letters: exclude the Basic-Latin upper case letters from the character set;\n-o or --no-lower-case-letters: exclude the Basic-Latin lower case letters from the character set;\n-s or --special-chars: include special characters (e.g. $, %, #, @ etc.) in the character set;\n-n or --numbers: include numbers (e.g. 0, 1, 2, etc.) in the character set;\n-v or --version: prints the current version of the passgen program;\n-h or --help: prints the help documentation;"
+    "text": "passgen is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of passgen, is to just give the program name, like in the example below:\n\n\nterminal$ passgen\nZLewZYChnF\n\n\nBy default, passgen will generate a password with 10 characters. The characters included in your password, will depend on the chosen character set. You can change the behaviour of passgen, by using one (or many) of the available options. In summary, passgen supports the following command-line options:\n\n-l or --length: define the length of your password (default to 10). This option expects a integer as argument;\n-p or --number-of-passwords: the number of passwords to be generated (default to 1). This option expects a integer as argument;\n-u or --no-upper-case-letters: exclude the Basic-Latin upper case letters from the character set;\n-o or --no-lower-case-letters: exclude the Basic-Latin lower case letters from the character set;\n-s or --special-chars: include special characters (e.g. $, %, #, @ etc.) in the character set;\n-n or --numbers: include numbers (e.g. 0, 1, 2, etc.) in the character set;\n-v or --version: prints the current version of the passgen program;\n-h or --help: prints the help documentation;"
   },
   {
     "objectID": "docs/pages/reference.html#including-numbers",
     "href": "docs/pages/reference.html#including-numbers",
     "title": "passgen",
     "section": "Including numbers",
-    "text": "Including numbers\nYou can include numbers (i.e. “0-9”) in the character set, by including the -n option, like this:\n\n\nterminal$ passgen -n -l 25\nMiF8hhnHPeyt4fjk4OVfRQqlW\n\n\nOr, the long version of the option:\n\n\nterminal$ passgen --numbers -l 25\nko6tGNz4otcFAHH5N627zwUzH"
+    "text": "Including numbers\nYou can include numbers (i.e. “0-9”) in the character set, by including the -n option, like this:\n\n\nterminal$ passgen -n -l 25\nL7nIM6mLtTlMyxOSPQS4Tcuuz\n\n\nOr, the long version of the option:\n\n\nterminal$ passgen --numbers -l 25\ngdN3dCza2aZ14VaDz7YXCRYHj"
   },
   {
     "objectID": "docs/pages/reference.html#including-special-characters",
     "href": "docs/pages/reference.html#including-special-characters",
     "title": "passgen",
     "section": "Including special characters",
-    "text": "Including special characters\nYou can include special characters (e.g. “!”, “@”, “#”, etc.) in the character set, by including the -s option, like this:\n\n\nterminal$ passgen -s -l 25\n}oHD~_-FA@[TKahb;iEgqXpPv\n\n\nOr, the long version of the option:\n\n\nterminal$ passgen --special-chars\nam~%-ZE$wS"
+    "text": "Including special characters\nYou can include special characters (e.g. “!”, “@”, “#”, etc.) in the character set, by including the -s option, like this:\n\n\nterminal$ passgen -s -l 25\n`lgnhMwJyuMBYjo=SnwfSzthV\n\n\nOr, the long version of the option:\n\n\nterminal$ passgen --special-chars\nqZq<%oTQ)T"
   },
   {
     "objectID": "docs/pages/reference.html#excluding-lower-and-upper-case-basic-latin-letters",
     "href": "docs/pages/reference.html#excluding-lower-and-upper-case-basic-latin-letters",
     "title": "passgen",
     "section": "Excluding lower and upper case Basic-Latin letters",
-    "text": "Excluding lower and upper case Basic-Latin letters\nYou can not only include specific set of characters, but, you can also exclude them. By default, passgen starts with a set of characters containing the lower and upper case Basic-Latin letters, however, you can exclude them with the -o and -u options (or its longer versions: --no-lower-case-letters and --no-upper-case-letters).\n\n\nterminal$ passgen -o\nEXWSTFPCZO\n\nterminal$ passgen -u\npgsfnvslkl\n\n\nBe careful to not remove all characters from the character set. In other words, if you remove the upper and lower case letters at the same time, and, not provide any set of characters to replace the void created, the program will issue an error warning about this mistake:\n\n\nterminal$ passgen -o -u\nWith the arguments you gave at the command line, all character set flags are set to false! As a result, the program does not have a character set to generate your password! \nterminate called without an active exception"
+    "text": "Excluding lower and upper case Basic-Latin letters\nYou can not only include specific set of characters, but, you can also exclude them. By default, passgen starts with a set of characters containing the lower and upper case Basic-Latin letters, however, you can exclude them with the -o and -u options (or its longer versions: --no-lower-case-letters and --no-upper-case-letters).\n\n\nterminal$ passgen -o\nWJPCEUVTGX\n\nterminal$ passgen -u\nitkpwkyart\n\n\nBe careful to not remove all characters from the character set. In other words, if you remove the upper and lower case letters at the same time, and, not provide any set of characters to replace the void created, the program will issue an error warning about this mistake:\n\n\nterminal$ passgen -o -u\nWith the arguments you gave at the command line, all character set flags are set to false! As a result, the program does not have a character set to generate your password! \nterminate called without an active exception"
   },
   {
     "objectID": "docs/pages/reference.html#producing-numbers-only-passwords",
     "href": "docs/pages/reference.html#producing-numbers-only-passwords",
     "title": "passgen",
     "section": "Producing “numbers-only” passwords",
-    "text": "Producing “numbers-only” passwords\nAs an example, you can produce a “numbers-only” password, by passing a character set composed only of numbers to passgen. You can do this, by excluding the lower and upper case Basic-Latin letters, and, including the numbers with options -o, -u and -n:\n\n\nterminal$ passgen -o -u -n\n7463617876"
+    "text": "Producing “numbers-only” passwords\nAs an example, you can produce a “numbers-only” password, by passing a character set composed only of numbers to passgen. You can do this, by excluding the lower and upper case Basic-Latin letters, and, including the numbers with options -o, -u and -n:\n\n\nterminal$ passgen -o -u -n\n3184325602"
   },
   {
     "objectID": "index.html",
