@@ -52,7 +52,7 @@ passgen --length 5
 
 # Changing the used character set
 
-By default, `passgen` uses a combination of lower and upper case Basic-Latin letters (i.e. "A-Z" and "a-z"). But you can use the available command-line options to change this character set, in order to produce passwords with different kinds of characters.
+By default, `passgen` uses a combination of lower and upper case Basic-Latin letters (i.e. "A-Z" and "a-z") to build your password. But you can use the available command-line options to change this character set, in order to produce passwords with different kinds of characters.
 
 ## Including numbers
 
@@ -88,8 +88,12 @@ You can not only include specific set of characters, but, you can also exclude t
 
 ```{cmd_passgen}
 passgen -o
+```
+
+```{cmd_passgen}
 passgen -u
 ```
+
 
 Be careful to not remove **all** characters from the character set. In other words, if you remove the upper and lower case letters at the same time, and, not provide any set of characters to replace the void created, the program will issue an error warning about this mistake:
 
@@ -104,6 +108,15 @@ As an example, you can produce a "numbers-only" password, by passing a character
 ```{cmd_passgen}
 passgen -o -u -n
 ```
+
+## Producing "special-chars-only" passwords
+
+You could use the same resource of removing characters with `-o` and `-u` options, in order to produce a "special-chars-only" password, like this:
+
+```{cmd_passgen}
+passgen -o -u -s
+```
+
 
 
 # Producing multiple passwords
