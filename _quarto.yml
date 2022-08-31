@@ -1,13 +1,22 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: docs/website
+
+
+
 
 website:
   title: "passgen"
   repo-url: https://github.com/pedropark99/passgen
   repo-actions: [edit, issue]
-  page-footer:
-    left: "Website for `passgen` command-line application, by Pedro Duarte Faria."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: docs/pages/how-to-build.qmd
+        text: How to build
+      - href: docs/pages/reference.qmd
+        text: Documentation
     right:
       - icon: github
         href: https://github.com/pedropark99/passgen
@@ -15,10 +24,6 @@ website:
         href: https://twitter.com/PedroPark9
       - icon: envelope
         href: mailto:pedropark99@gmail.com
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
 
 format:
   html:
