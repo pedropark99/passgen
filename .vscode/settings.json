@@ -67,5 +67,5 @@
         "xtree": "cpp",
         "xutility": "cpp"
     },
-    "makefile.extensionOutputFolder": "./../../makefile-logs"
+    "makefile.extensionOutputFolder": "./.vscode"
 }

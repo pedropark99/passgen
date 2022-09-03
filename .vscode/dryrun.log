@@ -5,7 +5,6 @@ g++ -I./include -c src/main.cpp
 g++ -I./include -c src/arguments_parser.cpp
  
 g++ -I./include -c src/password.cpp
- 
 g++ -I./include -c src/global_variables.cpp
 rm -r build
 mkdir build
