@@ -19,6 +19,7 @@ void parseCmdLineArguments (int argc, char *argv[]) {
     checkNumberOfArguments(argc);
     for (int argumentIndex = 0; argumentIndex < argc; argumentIndex++) {
         currentArgument = std::string(argv[argumentIndex]);
+        isLongVersionOption(currentArgument);
         currentArgument = transformArgumentToShortVersion(currentArgument);
         if (isCommandName(currentArgument)) {
             continue;
@@ -81,14 +82,16 @@ std::string transformArgumentToShortVersion (std::string argument) {
         return argument;
     }
     std::string shortVersion;
-    int stringSize = argument.size();
-    bool isLongVersion = !(stringSize == 2);
-    if (isLongVersion) {
+    if (isLongVersionOption(argument)) {
         shortVersion = getShortNameFromLongName(argument);
         return shortVersion;
     } else {
         return argument;
     }
+}
+
+bool isLongVersionOption (std::string argument) {
+    return argument.rfind("--", 0) == 0;
 }
 
 
