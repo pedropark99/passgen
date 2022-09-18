@@ -1,14 +1,12 @@
 make.exe --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/e/Users/pedro/Documents/Projetos/pkgs/passgen'
-g++ -I./include -c src/main.cpp
- 
-g++ -I./include -c src/arguments_parser.cpp
- 
-g++ -I./include -c src/password.cpp
-g++ -I./include -c src/global_variables.cpp
+make: Entering directory '/c/Users/pedro.duarte/Documents/projects/passgen'
+g++ -I./include -c src/main.cpp -static-libstdc++
+g++ -I./include -c src/arguments_parser.cpp -static-libstdc++
+g++ -I./include -c src/password.cpp -static-libstdc++
+g++ -I./include -c src/global_variables.cpp -static-libstdc++
 rm -r build
 mkdir build
-g++ -I./include -o build/passgen main.o arguments_parser.o password.o global_variables.o
+g++ -I./include -o build/passgen main.o arguments_parser.o password.o global_variables.o -static-libstdc++
 make clean
-make: Leaving directory '/e/Users/pedro/Documents/Projetos/pkgs/passgen'
+make: Leaving directory '/c/Users/pedro.duarte/Documents/projects/passgen'
  
