@@ -7,41 +7,41 @@ make: *** No rule to make target 'all'.  Stop.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sat Sep  3 14:00:29 2022
+# Make data base, printed on Sun Sep 18 13:28:56 2022
 
 # Variables
 
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
- 
 SYSTEMDRIVE = C:
+# environment
+JAVA_HOME = C:\Program Files\Java\jre1.8.0_311
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 1)
 BUILD_DIRECTORY = build
 # environment
-USERPROFILE = C:\Users\pedro
+USERPROFILE = C:\Users\pedro.duarte
 # environment
-LOCALAPPDATA = C:\Users\pedro\AppData\Local
+LOCALAPPDATA = C:\Users\pedro.duarte\AppData\Local
 # environment
-VSCODE_CWD = C:\Users\pedro\AppData\Local\Programs\Microsoft VS Code
+VSCODE_CWD = C:\Users\pedro.duarte\AppData\Local\Programs\Microsoft VS Code
 # environment
-SYSTEMROOT = C:\WINDOWS
+SYSTEMROOT = C:\windows
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := make
+# environment
+USERDNSDOMAIN = TAKENET.COM.BR
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_8452_LFWGDNYXJCZNGWRR
-# environment
-!E: = e:\Users\pedro\Documents\Projetos\pkgs\passgen
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11480_DXHNXAVMBJWXDSAZ
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -55,25 +55,23 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\pedro\AppData\Roaming\Code\CachedData\e4503b30fc78200f846c62cf8091b76ff5547662
+VSCODE_CODE_CACHE_PATH = C:\Users\pedro.duarte\AppData\Roaming\Code\CachedData\e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LANG = C
 # default
 .LOADED := 
 # environment
-TMP = /c/Users/pedro/AppData/Local/Temp
+TMP = /c/Users/PEDRO~1.DUA/AppData/Local/Temp
 # default
 .INCLUDE_DIRS = /usr/include /usr/include
 # makefile
 MAKEFLAGS = pqrR
 # environment
-ONEDRIVE = C:\Users\pedro\OneDrive
+ONEDRIVE = C:\Users\pedro.duarte\OneDrive
 # makefile
-CURDIR := /e/Users/pedro/Documents/Projetos/pkgs/passgen
+CURDIR := /c/Users/pedro.duarte/Documents/projects/passgen
 # environment
-SPARK_HOME = C:\spark
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -83,6 +81,8 @@ MFLAGS = -pqrR
 # default
 .SHELLFLAGS := -c
 # environment
+!C: = c:\Users\pedro.duarte\Documents\projects\passgen
+# environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
@@ -91,15 +91,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 8452
+VSCODE_PID = 11480
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 *F = $(notdir $*)
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
-# environment
-HADOOP_HOME = C:\Hadoop
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
 # default
@@ -109,25 +107,25 @@ PROGRAMDATA = C:\ProgramData
 # default
 SHELL := /bin/sh
 # environment
-HOMEPATH = \Users\pedro
+HOMEPATH = \Users\pedro.duarte
 # default
 MAKECMDGOALS := all
 # environment
 DRIVERDATA = C:\Windows\System32\Drivers\DriverData
 # environment
-COMSPEC = C:\WINDOWS\system32\cmd.exe
+COMSPEC = C:\windows\system32\cmd.exe
 # environment
-WINDIR = C:\WINDOWS
+WINDIR = C:\windows
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/Git/cmd:/c/Program Files/nodejs:/c/spark/bin:/c/Hadoop/bin:/c/Program Files (x86)/Calibre2:/usr/bin:/c/Users/pedro/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/c/Users/pedro/AppData/Roaming/TinyTeX/bin/win32:/c/Users/pedro/AppData/Local/Programs/Python/Python39/Scripts:/c/Users/pedro/AppData/Local/Programs/Python/Python39:/c/Users/pedro/AppData/Local/Microsoft/WindowsApps:/c/Users/pedro/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/pedro/AppData/Roaming/npm:/c/Users/pedro/AppData/Local/Programs/Quarto/bin:/c/Users/pedro/.deno/bin:/usr/bin
+PATH = /c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/windows/system32:/c/windows:/c/windows/System32/Wbem:/c/windows/System32/WindowsPowerShell/v1.0:/c/windows/System32/OpenSSH:/c/Program Files/PuTTY:/c/Program Files/TortoiseSVN/bin:/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn:/c/Program Files/Azure Data Studio/bin:/c/Program Files/Git/cmd:/mingw64/bin:/c/Program Files/R/R-4.1.2/bin/x64:/c/Program Files/dotnet:/c/Program Files/Microsoft SQL Server/150/Tools/Binn:/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/c/Program Files (x86)/PDFtk/bin:/usr/bin:/c/Users/pedro.duarte/AppData/Local/Programs/Python/Python310/Scripts:/c/Users/pedro.duarte/AppData/Local/Programs/Python/Python310:/c/Users/pedro.duarte/.dotnet/tools:/c/Users/pedro.duarte/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/pedro.duarte/AppData/Local/Programs/MiKTeX/miktex/bin/x64:/c/Users/pedro.duarte/AppData/Local/Programs/Quarto/bin
 # environment
-COMPUTERNAME = DESKTOP-JOTFKIL
+ZES_ENABLE_SYSMAN = 1
 # environment
-RTOOLS42_HOME = C:\rtools42
+COMPUTERNAME = NOTE5-MC641
 # default
 MAKEFILES := 
 # automatic
@@ -135,9 +133,9 @@ MAKEFILES :=
 # environment
 PROMPT = $P$G
 # environment
-LOGONSERVER = \\DESKTOP-JOTFKIL
+LOGONSERVER = \\AZ-CONTROL
 # environment
-USERNAME = pedro
+USERNAME = pedro.duarte
 # environment
 COMMONPROGRAMFILES = C:\Program Files\Common Files
 # automatic
@@ -151,7 +149,7 @@ PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
-USERDOMAIN = DESKTOP-JOTFKIL
+USERDOMAIN = TAKENET
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -163,13 +161,13 @@ MAKE_VERSION := 4.3
 # environment
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # environment
-USERDOMAIN_ROAMINGPROFILE = DESKTOP-JOTFKIL
+USERDOMAIN_ROAMINGPROFILE = TAKENET
 # environment
-NUMBER_OF_PROCESSORS = 4
+NUMBER_OF_PROCESSORS = 8
 # environment
 PUBLIC = C:\Users\Public
 # environment
-APPDATA = C:\Users\pedro\AppData\Roaming
+APPDATA = C:\Users\pedro.duarte\AppData\Roaming
 # environment
 HOMEDRIVE = C:
 # environment
@@ -177,17 +175,19 @@ PROCESSOR_ARCHITECTURE = AMD64
 # makefile (from 'Makefile', line 2)
 SOURCE_DIRECTORY = src
 # environment
+RTOOLS40_HOME = C:\rtools40
+# environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/pedro
+HOME = /home/pedro.duarte
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-TEMP = /c/Users/pedro/AppData/Local/Temp
+TEMP = /c/Users/PEDRO~1.DUA/AppData/Local/Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\bdaeb877f8385725989af8bd30fcff31-1.70.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\3262239bd6969fd2e857cd33d2c0a7ac-1.70.2-main-sock
 # environment
 TERM = xterm-256color
 # default
@@ -201,14 +201,13 @@ ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # default
- 
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # environment
-PROCESSOR_REVISION = 3c03
+PROCESSOR_REVISION = 7e05
 # environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
 # variable set hash-table stats:
-# Load=96/1024=9%, Rehash=0, Collisions=10/128=8%
+# Load=97/1024=9%, Rehash=0, Collisions=11/129=9%
 
 # Pattern-specific Variable Values
 
@@ -216,9 +215,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 
 # Directories
 
-# . (device 773598794, inode 20266198323236046): 14 files, no impossibilities.
+# . (device 4134527466, inode 8162774324810505): 19 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 19 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -229,7 +228,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-16 21:59:14.4118264
+#  Last modified 2022-08-29 21:01:34.2317543
 #  File has been updated.
 #  Successfully updated.
 
@@ -257,14 +256,14 @@ arguments_parser.o: src/arguments_parser.cpp
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 15):
-	g++ -I./include -c $(SOURCE_DIRECTORY)/arguments_parser.cpp
+	g++ -I./include -c $(SOURCE_DIRECTORY)/arguments_parser.cpp -static-libstdc++
 
 password.o: src/password.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 18):
-	g++ -I./include -c $(SOURCE_DIRECTORY)/password.cpp
+	g++ -I./include -c $(SOURCE_DIRECTORY)/password.cpp -static-libstdc++
 
 # Not a target:
 .DEFAULT:
@@ -284,7 +283,7 @@ main.o: src/main.cpp
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 12):
-	g++ -I./include -c $(SOURCE_DIRECTORY)/main.cpp
+	g++ -I./include -c $(SOURCE_DIRECTORY)/main.cpp -static-libstdc++
 
 build/passgen: main.o arguments_parser.o password.o global_variables.o
 #  Implicit rule search has not been done.
@@ -293,7 +292,7 @@ build/passgen: main.o arguments_parser.o password.o global_variables.o
 #  recipe to execute (from 'Makefile', line 6):
 	rm -r build
 	mkdir build
-	g++ -I./include -o $(BUILD_DIRECTORY)/passgen main.o arguments_parser.o password.o global_variables.o
+	g++ -I./include -o $(BUILD_DIRECTORY)/passgen main.o arguments_parser.o password.o global_variables.o -static-libstdc++
 	make clean
 
 # Not a target:
@@ -305,7 +304,6 @@ src/password.cpp:
 # Not a target:
 src/global_variables.cpp:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -314,7 +312,7 @@ global_variables.o: src/global_variables.cpp
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 21):
-	g++ -I./include -c $(SOURCE_DIRECTORY)/global_variables.cpp
+	g++ -I./include -c $(SOURCE_DIRECTORY)/global_variables.cpp -static-libstdc++
 
 # files hash-table stats:
 # Load=14/1024=1%, Rehash=0, Collisions=0/36=0%
@@ -324,12 +322,12 @@ global_variables.o: src/global_variables.cpp
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 296 B / avg = 10 B
-# current buf: size = 8162 B / used = 296 B / count = 28 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 342 B / avg = 10 B
+# current buf: size = 8162 B / used = 342 B / count = 33 / avg = 10 B
 
-# strcache performance: lookups = 42 / hit rate = 33%
+# strcache performance: lookups = 47 / hit rate = 29%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=0/42=0%
-# Finished Make data base on Sat Sep  3 14:00:29 2022
+# Load=33/8192=0%, Rehash=0, Collisions=0/47=0%
+# Finished Make data base on Sun Sep 18 13:28:56 2022
 
  

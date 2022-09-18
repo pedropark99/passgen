@@ -5,6 +5,8 @@
 
 void parseCmdLineArguments (int argc, char *argv[]);
 void checkNumberOfArguments (int argc);
+std::string transformArgumentToShortVersion (std::string argument);
+std::string getShortNameFromLongName (std::string argument);
 void checkInvalidArgument (std::string argument);
 void checkIfNextArgumentExists (int argc, int argumentIndex);
 

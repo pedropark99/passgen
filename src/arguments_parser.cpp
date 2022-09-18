@@ -4,10 +4,12 @@
 #include <stdlib.h>
 #include <iomanip>
 #include <algorithm>
+#include <map>
 
 
 #include "arguments_parser.hpp"
 #include "global_variables.hpp"
+
 
 
 
@@ -17,6 +19,7 @@ void parseCmdLineArguments (int argc, char *argv[]) {
     checkNumberOfArguments(argc);
     for (int argumentIndex = 0; argumentIndex < argc; argumentIndex++) {
         currentArgument = std::string(argv[argumentIndex]);
+        currentArgument = transformArgumentToShortVersion(currentArgument);
         if (isCommandName(currentArgument)) {
             continue;
         }
@@ -71,6 +74,31 @@ void checkNumberOfArguments (int argc) {
     if (argc > numberOfValidArguments) {
         throw std::invalid_argument("Too many arguments given to `passgen` command at the command line!");
     }
+}
+
+std::string transformArgumentToShortVersion (std::string argument) {
+    if (argument == "passgen") {
+        return argument;
+    }
+    std::string shortVersion;
+    int stringSize = argument.size();
+    bool isLongVersion = !(stringSize == 2);
+    if (isLongVersion) {
+        shortVersion = getShortNameFromLongName(argument);
+        return shortVersion;
+    } else {
+        return argument;
+    }
+}
+
+
+std::string getShortNameFromLongName (std::string argument) {
+    for (CommandLineOption cmdOption : COMMAND_LINE_OPTIONS) {
+        if (cmdOption.longName == argument) {
+            return cmdOption.shortName;
+        }
+    }
+    return argument;
 }
 
 bool searchInCmdOptions (std::string optionToSearch) {
