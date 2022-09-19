@@ -2,14 +2,11 @@
 title: "`passgen`"
 ---
 
-`passgen` is a command-line password generator, written in C++. Currently, the program is in version 0.1.0, and, supports most of the features you normally find in password generators, like:
-
-1. define the length of the password to be generated;
-2. include numbers and special characters in the password;
-3. exclude upper and lower case letters;
+`passgen` is a command-line password generator, written in C++. Currently, the program is in version 0.1.0, and, supports most of the features you normally find in password generators.
 
 # Features
 
-- `passgen` uses only C++ 11 Standard Library. As a result, it is very easy to build;
+- `passgen` uses only C++ Standard Library. As a result, it is very easy to build;
 - It have a option to generate multiple passwords at once;
 - Can produce "number-only", or, "special-chars-only" passwords;
+

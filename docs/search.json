@@ -1,9 +1,0 @@
-[
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "passgen",
-    "section": "",
-    "text": "define the length of the password to be generated;\ninclude numbers and special characters in the password;\nexclude upper and lower case letters;\n\n\nFeatures\n\npassgen uses only C++ 11 Standard Library. As a result, it is very easy to build;\nIt have a option to generate multiple passwords at once;\nCan produce “number-only”, or, “special-chars-only” passwords;"
-  }
-]

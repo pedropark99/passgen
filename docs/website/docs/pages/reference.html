@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.646">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>passgen – reference</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">passgen</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/pages/how-to-build.html">How to build</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../docs/pages/reference.html" aria-current="page">Documentation</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/pedropark99/passgen"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/PedroPark9"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:pedropark99@gmail.com"><i class="bi bi-envelope" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#changing-the-length-of-the-password" id="toc-changing-the-length-of-the-password" class="nav-link" data-scroll-target="#changing-the-length-of-the-password">Changing the length of the password</a></li>
+  <li><a href="#changing-the-used-character-set" id="toc-changing-the-used-character-set" class="nav-link" data-scroll-target="#changing-the-used-character-set">Changing the used character set</a>
+  <ul class="collapse">
+  <li><a href="#including-numbers" id="toc-including-numbers" class="nav-link" data-scroll-target="#including-numbers">Including numbers</a></li>
+  <li><a href="#including-special-characters" id="toc-including-special-characters" class="nav-link" data-scroll-target="#including-special-characters">Including special characters</a></li>
+  <li><a href="#excluding-lower-and-upper-case-basic-latin-letters" id="toc-excluding-lower-and-upper-case-basic-latin-letters" class="nav-link" data-scroll-target="#excluding-lower-and-upper-case-basic-latin-letters">Excluding lower and upper case Basic-Latin letters</a></li>
+  <li><a href="#producing-numbers-only-passwords" id="toc-producing-numbers-only-passwords" class="nav-link" data-scroll-target="#producing-numbers-only-passwords">Producing “numbers-only” passwords</a></li>
+  <li><a href="#producing-special-chars-only-passwords" id="toc-producing-special-chars-only-passwords" class="nav-link" data-scroll-target="#producing-special-chars-only-passwords">Producing “special-chars-only” passwords</a></li>
+  </ul></li>
+  <li><a href="#producing-multiple-passwords" id="toc-producing-multiple-passwords" class="nav-link" data-scroll-target="#producing-multiple-passwords">Producing multiple passwords</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/pedropark99/passgen/edit/main/docs/pages/reference.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/pedropark99/passgen/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p><code>passgen</code> is a command-line application, so, you use it by sending commands to the shell program of your operational system. The simplest use of <code>passgen</code>, is to just give the program name, like in the example below:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen
+AWlooZVZkR</code></pre>
+</div>
+</div>
+<p><strong>By default</strong>, <code>passgen</code> will generate a password with 10 characters. The characters included in your password, will depend on the chosen character set. You can change the behaviour of <code>passgen</code>, by using one (or many) of the available options. In summary, <code>passgen</code> supports the following command-line options:</p>
+<ul>
+<li><code>-l</code> or <code>--length</code>: define the length of your password (default to 10). This option expects a integer as argument;</li>
+<li><code>-p</code> or <code>--number-of-passwords</code>: the number of passwords to be generated (default to 1). This option expects a integer as argument;</li>
+<li><code>-u</code> or <code>--no-upper-case-letters</code>: exclude the Basic-Latin upper case letters from the character set;</li>
+<li><code>-o</code> or <code>--no-lower-case-letters</code>: exclude the Basic-Latin lower case letters from the character set;</li>
+<li><code>-s</code> or <code>--special-chars</code>: include special characters (e.g.&nbsp;<code>$</code>, <code>%</code>, <code>#</code>, <code>@</code> etc.) in the character set;</li>
+<li><code>-n</code> or <code>--numbers</code>: include numbers (e.g.&nbsp;<code>0</code>, <code>1</code>, <code>2</code>, etc.) in the character set;</li>
+<li><code>-v</code> or <code>--version</code>: prints the current version of the <code>passgen</code> program;</li>
+<li><code>-h</code> or <code>--help</code>: prints the help documentation;</li>
+</ul>
+</section>
+<section id="changing-the-length-of-the-password" class="level1">
+<h1>Changing the length of the password</h1>
+<p>The length of the password is defined by the <code>PASSWORD_LENGTH</code> global variable. By default, this variable is set to 10, however, you can set it to whatever value you want, by using the <code>-l</code> option.</p>
+<p>With this option, you can specify the exact number of characters you want in the resulting password. This options expects that you provide a integer argument, like in the example below, where we produce a 35 characters long password:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -l 35
+AWlooZVZkRAKZOeydPIahrdueDDakizdtwv</code></pre>
+</div>
+</div>
+<p>If you prefer, you can use the long version of the option too, with <code>--length</code>:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen --length 5
+NhgcG</code></pre>
+</div>
+</div>
+</section>
+<section id="changing-the-used-character-set" class="level1">
+<h1>Changing the used character set</h1>
+<p>By default, <code>passgen</code> uses a combination of lower and upper case Basic-Latin letters (i.e.&nbsp;“A-Z” and “a-z”) to build your password. But you can use the available command-line options to change this character set, in order to produce passwords with different kinds of characters.</p>
+<section id="including-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="including-numbers">Including numbers</h2>
+<p>You can include numbers (i.e.&nbsp;“0-9”) in the character set, by including the <code>-n</code> option, like this:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -n -l 25
+HvQ8aWCi6bPM8TfrKFLlJez04</code></pre>
+</div>
+</div>
+<p>Or, the long version of the option:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen --numbers -l 25
+HvQ8aWCi6bPM8TfrKFLlJez04</code></pre>
+</div>
+</div>
+</section>
+<section id="including-special-characters" class="level2">
+<h2 class="anchored" data-anchor-id="including-special-characters">Including special characters</h2>
+<p>You can include special characters (e.g.&nbsp;“!”, “@”, “#”, etc.) in the character set, by including the <code>-s</code> option, like this:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -s -l 25
+G^|TM$&gt;Epa"a./}`IP/;#+gOz</code></pre>
+</div>
+</div>
+<p>Or, the long version of the option:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen --special-chars
+G^|TM$&gt;Epa</code></pre>
+</div>
+</div>
+</section>
+<section id="excluding-lower-and-upper-case-basic-latin-letters" class="level2">
+<h2 class="anchored" data-anchor-id="excluding-lower-and-upper-case-basic-latin-letters">Excluding lower and upper case Basic-Latin letters</h2>
+<p>You can not only include specific set of characters, but, you can also exclude them. By default, <code>passgen</code> starts with a set of characters containing the lower and upper case Basic-Latin letters, however, you can exclude them with the <code>-o</code> and <code>-u</code> options (or its longer versions: <code>--no-lower-case-letters</code> and <code>--no-upper-case-letters</code>).</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -o
+MZYDVTDWUE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -u
+mzydvtdwue</code></pre>
+</div>
+</div>
+<p>Be careful to not remove <strong>all</strong> characters from the character set. In other words, if you remove the upper and lower case letters at the same time, and, not provide any set of characters to replace the void created, the program will issue an error warning about this mistake:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -o -u
+With the arguments you gave at the command line, all character set flags are set to false! As a result, the program does not have a character set to generate your password! 
+terminate called without an active exception</code></pre>
+</div>
+</div>
+</section>
+<section id="producing-numbers-only-passwords" class="level2">
+<h2 class="anchored" data-anchor-id="producing-numbers-only-passwords">Producing “numbers-only” passwords</h2>
+<p>As an example, you can produce a “numbers-only” password, by passing a character set composed only of numbers to <code>passgen</code>. You can do this, by excluding the lower and upper case Basic-Latin letters, and, including the numbers with options <code>-o</code>, <code>-u</code> and <code>-n</code>:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -o -u -n
+5310110841</code></pre>
+</div>
+</div>
+</section>
+<section id="producing-special-chars-only-passwords" class="level2">
+<h2 class="anchored" data-anchor-id="producing-special-chars-only-passwords">Producing “special-chars-only” passwords</h2>
+<p>You could use the same resource of removing characters with <code>-o</code> and <code>-u</code> options, in order to produce a “special-chars-only” password, like this:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -o -u -s
+$&gt;/[$_#(!&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="producing-multiple-passwords" class="level1">
+<h1>Producing multiple passwords</h1>
+<p>By default, <code>passgen</code> will generate a single password. However, you can produce multiple password at the same time, by using the <code>-p</code> option (or its long version <code>--number-of-passwords</code>). This option expects a integer argument like the <code>-l</code> option. In the following example, we are generating 6 different passwords with a single command:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -p 6
+KnrFpCIBdp
+vWMpJekJsF
+KcfMTpPqFC
+OkQNDlFZWp
+JDkhdZzaBe
+mtoejZINTV</code></pre>
+</div>
+</div>
+<p>Is important to highlight that, the options that you pass to <code>passgen</code> are disseminated to all of the generated passwords. In other words, if you use the option <code>-p</code> with the value of 10, and, the <code>-l</code> option with the value of 15, <code>passgen</code> will produce 10 different passwords that are 15 characters long:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -p 10 -l 15
+bVFQKhYgARxUylK
+rmONoEEQKwpSTTS
+xarJOFzZUwUgPYB
+aUCfLXNPTHGJtFV
+TJFFFCLTQgjPkKC
+FVyaFMRDsGmWXkf
+ekJsFKnrFpCIBdp
+KcfMTpPqFCvWMpJ
+ZzaBeOkQNDlFZWp
+mtoejZINTVJDkhd</code></pre>
+</div>
+</div>
+<p>This also means that <code>passgen</code> will use the same character set you built with the command-line options, to generate all of the different passwords. For example, if you use the options <code>-n</code> and <code>-o</code> like in the example below, <code>passgen</code> will generate 4 different passwords that have a combination of numbers and upper case Basic-Latin letters:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>terminal$ passgen -p 4 -n -o
+VOQ6H3BN9X
+7MPWFCB82I
+534FW142NH
+3ZF9ED1OJ0</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
