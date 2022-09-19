@@ -8,12 +8,10 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Sep 18 13:28:56 2022
+# Make data base, printed on Mon Sep 19 11:21:11 2022
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -41,9 +39,7 @@ USERDNSDOMAIN = TAKENET.COM.BR
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11480_DXHNXAVMBJWXDSAZ
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_9520_XHNRCUWSKGWOPUTS
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -55,7 +51,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\pedro.duarte\AppData\Roaming\Code\CachedData\e4503b30fc78200f846c62cf8091b76ff5547662
+VSCODE_CODE_CACHE_PATH = C:\Users\pedro.duarte\AppData\Roaming\Code\CachedData\74b1f979648cc44d385a2286793c226e611f59e7
 # environment
 LANG = C
 # default
@@ -71,7 +67,7 @@ ONEDRIVE = C:\Users\pedro.duarte\OneDrive
 # makefile
 CURDIR := /c/Users/pedro.duarte/Documents/projects/passgen
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -91,7 +87,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 11480
+VSCODE_PID = 9520
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -154,6 +150,8 @@ USERDOMAIN = TAKENET
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
+# environment
+__COMPAT_LAYER = DetectorsAppHealth
 # makefile
 .DEFAULT_GOAL := build/passgen
 # default
@@ -187,7 +185,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = /c/Users/PEDRO~1.DUA/AppData/Local/Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\3262239bd6969fd2e857cd33d2c0a7ac-1.70.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\3262239bd6969fd2e857cd33d2c0a7ac-1.71.2-main-sock
 # environment
 TERM = xterm-256color
 # default
@@ -207,7 +205,7 @@ PROCESSOR_REVISION = 7e05
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 126 Stepping 5, GenuineIntel
 # variable set hash-table stats:
-# Load=97/1024=9%, Rehash=0, Collisions=11/129=9%
+# Load=96/1024=9%, Rehash=0, Collisions=10/128=8%
 
 # Pattern-specific Variable Values
 
@@ -328,6 +326,6 @@ global_variables.o: src/global_variables.cpp
 # strcache performance: lookups = 47 / hit rate = 29%
 # hash-table stats:
 # Load=33/8192=0%, Rehash=0, Collisions=0/47=0%
-# Finished Make data base on Sun Sep 18 13:28:56 2022
+# Finished Make data base on Mon Sep 19 11:21:11 2022
 
  
