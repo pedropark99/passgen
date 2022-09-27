@@ -5,10 +5,10 @@
 
 void parseCmdLineArguments (int argc, char *argv[]);
 void checkNumberOfArguments (int argc);
-void cacheUserCmdLineOptions (int argc, char *argv[]);
+void cacheCmdLineArguments (int argc, char *argv[]);
 std::string transformArgumentToShortVersion (std::string argument);
 std::string getShortNameFromLongName (std::string argument);
-bool isLongVersionOption (std::string argument);
+bool isLongVersionArgument (std::string argument);
 std::string getNextArgument (std::vector<std::string>::iterator &position);
 bool argumentWasProvidedByTheUser (std::string argument);
 std::vector<std::string>::iterator getArgumentPosition (std::string argument);
@@ -20,11 +20,10 @@ void checkIfNextArgumentExists (int argc, int argumentIndex);
 
 
 
-
 void evaluateLengthArgument ();
 void evaluateSpecialCharsArgument ();
 void evaluateLowerCaseArgument ();
-void evaluateLowerCaseArgument ();
+void evaluateUpperCaseArgument ();
 void evaluateNumberOfPasswordsArgument ();
 void evaluateNumbersArgument ();
 
@@ -45,7 +44,7 @@ bool isNumberOfPasswordsArgument (std::string argument);
 bool isVersionArgument (std::string argument);
 bool isHelpArgument (std::string argument);
 
-
+bool searchInCmdArguments (std::string argumentToSearch);
 int castValueToInteger (std::string value);
 bool stringEndsWith (std::string stringToCheck, std::string endToCompare);
 

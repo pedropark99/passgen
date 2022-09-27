@@ -11,7 +11,7 @@ const std::string PASSGEN_VERSION = "0.1.0";
 const std::string PASSGEN_COMMAND_NAME = "passgen";
 
 
-std::vector<std::string> USER_CMDLINE_OPTIONS;
+std::vector<std::string> USER_CMDLINE_ARGUMENTS;
 
 
 bool EXIT_PROGRAM = false;
@@ -28,7 +28,7 @@ int NUMBER_OF_PASSWORDS = 1;
 
 
 
-const std::vector<CommandLineOption> COMMAND_LINE_OPTIONS = {
+const std::vector<CommandLineArgument> COMMAND_LINE_ARGUMENTS = {
     { "-l", "--length", "The length of the password to be generated (default to 10). Expect a integer as argument;" },
     { "-p", "--number-of-passwords", "The number of passwords to be generated (default to 1). Expect a integer as argument;" },
     { "-u", "--no-upper-case-letters", "Exclude upper case Basic-Latin letters from the character set;" },
