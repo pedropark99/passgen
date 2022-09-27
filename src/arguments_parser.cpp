@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <iomanip>
 #include <algorithm>
+#include <iterator>
 #include <map>
 
 
@@ -12,127 +13,138 @@
 
 
 
-
 void parseCmdLineArguments (int argc, char *argv[]) {
-    std::string currentArgument;
-    std::string nextArgument;
     checkNumberOfArguments(argc);
-    for (int argumentIndex = 0; argumentIndex < argc; argumentIndex++) {
-        currentArgument = std::string(argv[argumentIndex]);
-        isLongVersionOption(currentArgument);
-        currentArgument = transformArgumentToShortVersion(currentArgument);
-        if (isCommandName(currentArgument)) {
-            continue;
-        }
-        if (isVersionArgument(currentArgument)) {
-            printProgramVersion();
-            exit(0);
-        }
-        if (isHelpArgument(currentArgument)) {
-            printProgramHelp();
-            exit(0);
-        }
-        if (isLengthArgument(currentArgument)) {
-            checkIfNextArgumentExists(argc, argumentIndex);
-            argumentIndex++;
-            nextArgument = std::string(argv[argumentIndex]);
-            PASSWORD_LENGTH = castValueToInteger(nextArgument);
-            continue;
-        }
-        if (isSpecialCharsArgument(currentArgument)) {
-            SPECIAL_CHARS_FLAG = true;
-            continue;
-        }
-        if (isNumbersArgument(currentArgument)) {
-            NUMBERS_FLAG = true;
-            continue;
-        }
-        if (isLowerCaseArgument(currentArgument)) {
-            LOWER_CASE_LETTERS_FLAG = false;
-            continue;
-        }
-        if (isUpperCaseArgument(currentArgument)) {
-            UPPER_CASE_LETTERS_FLAG = false;
-            continue;
-        }
-        if (isNumberOfPasswordsArgument(currentArgument)) {
-            checkIfNextArgumentExists(argc, argumentIndex);
-            argumentIndex++;
-            nextArgument = std::string(argv[argumentIndex]);
-            NUMBER_OF_PASSWORDS = castValueToInteger(nextArgument);
-            continue;
-        }
-
-        checkInvalidArgument(currentArgument);
-    }
+    cacheCmdLineArguments(argc, argv);
+    executeArgumentEvaluators();
 }
 
+
 void checkNumberOfArguments (int argc) {
-    int numberOfCmdArguments = COMMAND_LINE_OPTIONS.size();
-    int lengthValueArgument = 1;
-    int commandNameArgument = 1;
-    int numberOfValidArguments = numberOfCmdArguments + lengthValueArgument + commandNameArgument;
+    int numberOfCmdArguments = COMMAND_LINE_ARGUMENTS.size();
+    int numberOfValidArguments = numberOfCmdArguments + 3;
     if (argc > numberOfValidArguments) {
         throw std::invalid_argument("Too many arguments given to `passgen` command at the command line!");
     }
+}
+
+void cacheCmdLineArguments (int argc, char *argv[]) {
+    std::string currentArgument;
+    USER_CMDLINE_ARGUMENTS.reserve(argc);
+    for (int argumentIndex = 0; argumentIndex < argc; argumentIndex++) {
+        currentArgument = std::string(argv[argumentIndex]);
+        currentArgument = transformArgumentToShortVersion(currentArgument);
+        USER_CMDLINE_ARGUMENTS.push_back(currentArgument);
+    }
+}
+
+
+std::vector<functionPointer> argumentsEvaluators = {
+    &evaluateLengthArgument,
+    &evaluateSpecialCharsArgument,
+    &evaluateLowerCaseArgument,
+    &evaluateUpperCaseArgument,
+    &evaluateNumbersArgument,
+    &evaluateNumberOfPasswordsArgument,
+    &evaluateVersionArgument,
+    &evaluateHelpArgument
+};
+
+void executeArgumentEvaluators () {
+    for (functionPointer argumentEvaluator : argumentsEvaluators) {
+        executeFunctionFromPointer(argumentEvaluator);
+    }
+}
+
+void executeFunctionFromPointer (functionPointer fun) {
+    fun();
 }
 
 std::string transformArgumentToShortVersion (std::string argument) {
     if (argument == "passgen") {
         return argument;
     }
-    std::string shortVersion;
-    if (isLongVersionOption(argument)) {
+    if (isLongVersionArgument(argument)) {
+        std::string shortVersion;
         shortVersion = getShortNameFromLongName(argument);
         return shortVersion;
-    } else {
-        return argument;
     }
+    return argument;
 }
 
-bool isLongVersionOption (std::string argument) {
+bool isLongVersionArgument (std::string argument) {
     return argument.rfind("--", 0) == 0;
 }
 
-
 std::string getShortNameFromLongName (std::string argument) {
-    for (CommandLineOption cmdOption : COMMAND_LINE_OPTIONS) {
-        if (cmdOption.longName == argument) {
-            return cmdOption.shortName;
+    for (CommandLineArgument cmdArgument : COMMAND_LINE_ARGUMENTS) {
+        if (cmdArgument.longName == argument) {
+            return cmdArgument.shortName;
         }
     }
     return argument;
 }
 
-bool searchInCmdOptions (std::string optionToSearch) {
-    bool optionFound;
-    for (CommandLineOption option : COMMAND_LINE_OPTIONS) {
-        optionFound = optionToSearch == option.shortName | optionToSearch == option.longName;
-        if (optionFound) {
-            return true;
-        }
-    }
-    return false;
-}
 
 
-void checkInvalidArgument (std::string option) {
-    bool notFoundInCmdOptions;
-    notFoundInCmdOptions = !searchInCmdOptions(option);
-    if (notFoundInCmdOptions) {
-        std::string errorMessage = "The option `` is invalid! Use `passgen -h` to see the available command-line options.";
-        errorMessage.insert(12, option);
-        errorMessage = std::string(errorMessage);
-        throw std::invalid_argument(errorMessage);
+
+
+
+
+
+void evaluateLengthArgument () {
+    std::vector<std::string>::iterator position;
+    position = getArgumentPosition("-l");
+    if (position != USER_CMDLINE_ARGUMENTS.end()) {
+        std::string nextArgument;
+        nextArgument = getNextArgument(position);
+        PASSWORD_LENGTH = castValueToInteger(nextArgument);
     }
 }
 
+void evaluateSpecialCharsArgument () {
+    if (argumentWasProvidedByTheUser("-s")) {
+        SPECIAL_CHARS_FLAG = true;
+    }
+}
 
-void checkIfNextArgumentExists (int argc, int argumentIndex) {
-    int zeroBasedIndexOffSet = 1;
-    int nextIndex = argumentIndex + zeroBasedIndexOffSet + 1;
-    if (nextIndex > argc) {
-        throw std::invalid_argument("After the argument `-l` or `--length`, you need to provide a integer (that represents the password length), but, none was given!");
+void evaluateLowerCaseArgument () {
+    if (argumentWasProvidedByTheUser("-o")) {
+        LOWER_CASE_LETTERS_FLAG = false;
+    } 
+}
+
+void evaluateUpperCaseArgument () {
+    if (argumentWasProvidedByTheUser("-u")) {
+        UPPER_CASE_LETTERS_FLAG = false;
+    } 
+}
+
+void evaluateNumberOfPasswordsArgument () {
+    std::vector<std::string>::iterator position;
+    position = getArgumentPosition("-p");
+    if (position != USER_CMDLINE_ARGUMENTS.end()) {
+        std::string nextArgument;
+        nextArgument = getNextArgument(position);
+        NUMBER_OF_PASSWORDS = castValueToInteger(nextArgument);
+    }
+}
+
+void evaluateNumbersArgument () {
+    if (argumentWasProvidedByTheUser("-n")) {
+        NUMBERS_FLAG = true;
+    }
+}
+
+void evaluateVersionArgument () {
+    if (argumentWasProvidedByTheUser("-v")) {
+        printProgramVersion();
+    }
+}
+
+void evaluateHelpArgument () {
+    if (argumentWasProvidedByTheUser("-h")) {
+        printProgramHelp();
     }
 }
 
@@ -140,58 +152,37 @@ void checkIfNextArgumentExists (int argc, int argumentIndex) {
 
 
 
-bool isCommandName (std::string argument) {
-    std::string commandName = "passgen";
-    if (argument.length() < commandName.length()) {
-        return false;
-    }
-    return argument == commandName | stringEndsWith(argument, commandName);
+
+std::vector<std::string>::iterator getArgumentPosition (std::string argument) {
+	std::vector<std::string>::iterator position;
+	position = USER_CMDLINE_ARGUMENTS.begin();
+    for (std::string currentArgument : USER_CMDLINE_ARGUMENTS) {
+		if (currentArgument == argument) {
+			return position;
+		}
+		position++;
+	}
+	return position;
 }
 
-bool isLengthArgument (std::string argument) {
-    return argument == "-l" | argument == "--length";
+bool argumentWasProvidedByTheUser (std::string argument) {
+    bool argumentWasFound = false;
+    for (std::string currentArgument : USER_CMDLINE_ARGUMENTS) {
+		if (currentArgument == argument) {
+            argumentWasFound = true;
+		}
+	}
+    return argumentWasFound;
 }
 
-bool isSpecialCharsArgument (std::string argument) {
-    return argument == "-s" | argument == "--special-chars";
+std::string getNextArgument (std::vector<std::string>::iterator &position) {
+    if (std::next(position) != USER_CMDLINE_ARGUMENTS.end()) {
+        position++;
+        return *position;
+    } else {
+        throw std::invalid_argument("After the arguments `-l`, `--length`, `-p`, `--number-of-passwords`, you need to provide a integer, but, none was given!");
+    };
 }
-
-bool isNumbersArgument (std::string argument) {
-    return argument == "-n" | argument == "--numbers";
-}
-
-bool isLowerCaseArgument (std::string argument) {
-    return argument == "-o" | argument == "--no-lower-case-letters";
-}
-
-bool isUpperCaseArgument (std::string argument) {
-    return argument == "-u" | argument == "--no-upper-case-letters";
-}
-
-bool isNumberOfPasswordsArgument (std::string argument) {
-    return argument == "-p" | argument == "--number-of-passwords";
-}
-
-bool isVersionArgument (std::string argument) {
-    return argument == "-v" | argument == "--version";
-}
-
-bool isHelpArgument (std::string argument) {
-    return argument == "-h" | argument == "--help";
-}
-
-
-bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
-    int result = stringToCheck.compare(
-        stringToCheck.length() - endToCompare.length(),
-        stringToCheck.length(),
-        endToCompare
-    );
-    
-    return result == 0;
-}
-
-
 
 int castValueToInteger (std::string value) {
     std::istringstream ss(value);
@@ -220,16 +211,61 @@ int castValueToInteger (std::string value) {
 
 
 
+void reportInvalidArgument (std::string argument) {
+    bool notFoundInValidArguments;
+    notFoundInValidArguments = !searchInCmdArguments(argument);
+    if (notFoundInValidArguments) {
+        std::string errorMessage = "The argument `` is invalid! Use `passgen -h` to see the available command-line arguments.";
+        errorMessage.insert(14, argument);
+        errorMessage = std::string(errorMessage);
+        throw std::invalid_argument(errorMessage);
+    }
+}
 
-void printProgramVersion () {
-    std::cout << "Version: " << PASSGEN_VERSION << std::endl;
+bool searchInCmdArguments (std::string argumentToSearch) {
+    bool argumentFound;
+    for (CommandLineArgument argument : COMMAND_LINE_ARGUMENTS) {
+        argumentFound = argument.shortName == argumentToSearch;
+        if (argumentFound) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
 
+
+
+
+bool stringEndsWith (std::string stringToCheck, std::string endToCompare) {
+    int result = stringToCheck.compare(
+        stringToCheck.length() - endToCompare.length(),
+        stringToCheck.length(),
+        endToCompare
+    );
+    
+    return result == 0;
+}
+
+
+
+
+
+
+
+
+
+
+void printProgramVersion () {
+    std::cout << "Version: " << PASSGEN_VERSION << std::endl;
+    exitProgram();
+}
+
 void printProgramHelp () {
     printProgramBasicInfo();
     printProgramOptions();
+    exitProgram();
 }
 
 void printProgramBasicInfo () {
@@ -244,18 +280,21 @@ void printProgramBasicInfo () {
         << std::endl << std::endl << std::endl;
 }
 
-
 void printProgramOptions () {
     const int minPrintHorizontalSpace = 23;
     std::cout << "Options:" << std::endl << std::endl;
-    for (int i = 0; i < COMMAND_LINE_OPTIONS.size(); i++) {
+    for (int i = 0; i < COMMAND_LINE_ARGUMENTS.size(); i++) {
         std::cout << std::left << "    " 
-            << COMMAND_LINE_OPTIONS[i].shortName
+            << COMMAND_LINE_ARGUMENTS[i].shortName
             << ", "
             << std::setw(minPrintHorizontalSpace)
-            << COMMAND_LINE_OPTIONS[i].longName
+            << COMMAND_LINE_ARGUMENTS[i].longName
             << " - "
-            << COMMAND_LINE_OPTIONS[i].description
+            << COMMAND_LINE_ARGUMENTS[i].description
             << std::endl; 
     }
+}
+
+void exitProgram () {
+    exit(0);
 }
