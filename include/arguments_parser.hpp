@@ -26,6 +26,8 @@ void evaluateLowerCaseArgument ();
 void evaluateUpperCaseArgument ();
 void evaluateNumberOfPasswordsArgument ();
 void evaluateNumbersArgument ();
+void evaluateVersionArgument ();
+void evaluateHelpArgument ();
 
 
 void executeArgumentEvaluators ();

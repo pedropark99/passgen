@@ -45,7 +45,9 @@ std::vector<functionPointer> argumentsEvaluators = {
     &evaluateLowerCaseArgument,
     &evaluateUpperCaseArgument,
     &evaluateNumbersArgument,
-    &evaluateNumberOfPasswordsArgument
+    &evaluateNumberOfPasswordsArgument,
+    &evaluateVersionArgument,
+    &evaluateHelpArgument
 };
 
 void executeArgumentEvaluators () {
@@ -131,6 +133,18 @@ void evaluateNumberOfPasswordsArgument () {
 void evaluateNumbersArgument () {
     if (argumentWasProvidedByTheUser("-n")) {
         NUMBERS_FLAG = true;
+    }
+}
+
+void evaluateVersionArgument () {
+    if (argumentWasProvidedByTheUser("-v")) {
+        printProgramVersion();
+    }
+}
+
+void evaluateHelpArgument () {
+    if (argumentWasProvidedByTheUser("-h")) {
+        printProgramHelp();
     }
 }
 
