@@ -5,17 +5,15 @@
 
 #include "global_variables.hpp"
 
-// Global variables
+// Global variables used across the program
+
+std::vector<std::string> USER_CMDLINE_ARGUMENTS;
 
 const std::string PASSGEN_VERSION = "0.2.0";
 const std::string PASSGEN_COMMAND_NAME = "passgen";
 
 
-std::vector<std::string> USER_CMDLINE_ARGUMENTS;
 
-
-bool EXIT_PROGRAM = false;
-bool CONTINE_FOR_LOOP = false;
 
 
 int PASSWORD_LENGTH = 10;

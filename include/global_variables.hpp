@@ -4,17 +4,16 @@
 #include <vector>
 
 
+/* Used to store (or cache) all of the command line arguments
+given by the user; */
+extern std::vector<std::string> USER_CMDLINE_ARGUMENTS;
+
+/* Basic infos about the `passgen` program; */
 extern const std::string PASSGEN_VERSION;
 extern const std::string PASSGEN_COMMAND_NAME;
 
 
-extern std::vector<std::string> USER_CMDLINE_ARGUMENTS;
-
-
-extern bool EXIT_PROGRAM;
-extern bool CONTINE_FOR_LOOP;
-
-
+/* Variables that describe the password to be generated; */
 extern int PASSWORD_LENGTH;
 extern bool LOWER_CASE_LETTERS_FLAG;
 extern bool UPPER_CASE_LETTERS_FLAG;
@@ -28,9 +27,11 @@ struct CommandLineArgument {
     std::string longName;
     std::string description;
 };
-
+/* Object that stores all of the available (or supported) command line arguments; */
 extern const std::vector<CommandLineArgument> COMMAND_LINE_ARGUMENTS;
 
+
+/* Objects that stores all of the supported characters set; */
 extern const std::vector<char> LOWER_CASE_LETTERS;
 extern const std::vector<char> UPPER_CASE_LETTERS;
 extern const std::vector<char> NUMBERS;

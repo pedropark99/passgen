@@ -184,6 +184,7 @@ std::string getNextArgument (std::vector<std::string>::iterator &position) {
     };
 }
 
+
 int castValueToInteger (std::string value) {
     std::istringstream ss(value);
     int castedValue;
