@@ -8,6 +8,13 @@ extern const std::string PASSGEN_VERSION;
 extern const std::string PASSGEN_COMMAND_NAME;
 
 
+extern std::vector<std::string> USER_CMDLINE_OPTIONS;
+
+
+extern bool EXIT_PROGRAM;
+extern bool CONTINE_FOR_LOOP;
+
+
 extern int PASSWORD_LENGTH;
 extern bool LOWER_CASE_LETTERS_FLAG;
 extern bool UPPER_CASE_LETTERS_FLAG;

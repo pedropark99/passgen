@@ -5,11 +5,34 @@
 
 void parseCmdLineArguments (int argc, char *argv[]);
 void checkNumberOfArguments (int argc);
+void cacheUserCmdLineOptions (int argc, char *argv[]);
 std::string transformArgumentToShortVersion (std::string argument);
 std::string getShortNameFromLongName (std::string argument);
 bool isLongVersionOption (std::string argument);
-void checkInvalidArgument (std::string argument);
+std::string getNextArgument (std::vector<std::string>::iterator &position);
+bool argumentWasProvidedByTheUser (std::string argument);
+std::vector<std::string>::iterator getArgumentPosition (std::string argument);
+typedef void (*functionPointer)(void);
+void executeFunctionFromPointer (functionPointer fun);
+void reportInvalidArgument (std::string argument);
 void checkIfNextArgumentExists (int argc, int argumentIndex);
+
+
+
+
+
+void evaluateLengthArgument ();
+void evaluateSpecialCharsArgument ();
+void evaluateLowerCaseArgument ();
+void evaluateLowerCaseArgument ();
+void evaluateNumberOfPasswordsArgument ();
+void evaluateNumbersArgument ();
+
+
+void executeArgumentEvaluators ();
+
+
+
 
 
 bool isCommandName (std::string argument);
@@ -31,3 +54,4 @@ void printProgramVersion ();
 void printProgramHelp ();
 void printProgramBasicInfo ();
 void printProgramOptions ();
+void exitProgram ();

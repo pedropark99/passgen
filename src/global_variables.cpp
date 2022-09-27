@@ -11,6 +11,12 @@ const std::string PASSGEN_VERSION = "0.1.0";
 const std::string PASSGEN_COMMAND_NAME = "passgen";
 
 
+std::vector<std::string> USER_CMDLINE_OPTIONS;
+
+
+bool EXIT_PROGRAM = false;
+bool CONTINE_FOR_LOOP = false;
+
 
 int PASSWORD_LENGTH = 10;
 bool LOWER_CASE_LETTERS_FLAG = true;
