@@ -138,7 +138,7 @@ ul.task-list{list-style: none;}
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen
-AWlooZVZkR</code></pre>
+RIUiMWysgw</code></pre>
 </div>
 </div>
 <p><strong>By default</strong>, <code>passgen</code> will generate a password with 10 characters. The characters included in your password, will depend on the chosen character set. You can change the behaviour of <code>passgen</code>, by using one (or many) of the available options. In summary, <code>passgen</code> supports the following command-line options:</p>
@@ -160,14 +160,14 @@ AWlooZVZkR</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -l 35
-AWlooZVZkRAKZOeydPIahrdueDDakizdtwv</code></pre>
+RIUiMWysgwnKNSKVOZWxpKssGAEIwIqnxTr</code></pre>
 </div>
 </div>
 <p>If you prefer, you can use the long version of the option too, with <code>--length</code>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen --length 5
-NhgcG</code></pre>
+RIUiM</code></pre>
 </div>
 </div>
 </section>
@@ -180,14 +180,14 @@ NhgcG</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -n -l 25
-HvQ8aWCi6bPM8TfrKFLlJez04</code></pre>
+pxtaRn0rK2fUdK0ThfyVZFwKC</code></pre>
 </div>
 </div>
 <p>Or, the long version of the option:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen --numbers -l 25
-HvQ8aWCi6bPM8TfrKFLlJez04</code></pre>
+pxtaRn0rK2fUdK0ThfyVZFwKC</code></pre>
 </div>
 </div>
 </section>
@@ -197,14 +197,14 @@ HvQ8aWCi6bPM8TfrKFLlJez04</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -s -l 25
-G^|TM$&gt;Epa"a./}`IP/;#+gOz</code></pre>
+&gt;=P=jDy&gt;coPmdx(RD}OHvWd#%</code></pre>
 </div>
 </div>
 <p>Or, the long version of the option:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen --special-chars
-G^|TM$&gt;Epa</code></pre>
+M-eh}r?i"X</code></pre>
 </div>
 </div>
 </section>
@@ -214,13 +214,13 @@ G^|TM$&gt;Epa</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -o
-MZYDVTDWUE</code></pre>
+QAKHZBDIDO</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -u
-mzydvtdwue</code></pre>
+dkfvtrgqql</code></pre>
 </div>
 </div>
 <p>Be careful to not remove <strong>all</strong> characters from the character set. In other words, if you remove the upper and lower case letters at the same time, and, not provide any set of characters to replace the void created, the program will issue an error warning about this mistake:</p>
@@ -238,7 +238,7 @@ terminate called without an active exception</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -o -u -n
-5310110841</code></pre>
+1839512867</code></pre>
 </div>
 </div>
 </section>
@@ -248,7 +248,7 @@ terminate called without an active exception</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -o -u -s
-$&gt;/[$_#(!&gt;</code></pre>
+|#-",^\_%\</code></pre>
 </div>
 </div>
 </section>
@@ -259,38 +259,38 @@ $&gt;/[$_#(!&gt;</code></pre>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -p 6
-KnrFpCIBdp
-vWMpJekJsF
-KcfMTpPqFC
-OkQNDlFZWp
-JDkhdZzaBe
-mtoejZINTV</code></pre>
+EKNkvDdwMO
+pOOzmJmyrn
+TCrjQwvrMW
+QyNHfjfsNJ
+WfBZdnugCJ
+rUAJOHIZag</code></pre>
 </div>
 </div>
 <p>Is important to highlight that, the options that you pass to <code>passgen</code> are disseminated to all of the generated passwords. In other words, if you use the option <code>-p</code> with the value of 10, and, the <code>-l</code> option with the value of 15, <code>passgen</code> will produce 10 different passwords that are 15 characters long:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -p 10 -l 15
-bVFQKhYgARxUylK
-rmONoEEQKwpSTTS
-xarJOFzZUwUgPYB
-aUCfLXNPTHGJtFV
-TJFFFCLTQgjPkKC
-FVyaFMRDsGmWXkf
-ekJsFKnrFpCIBdp
-KcfMTpPqFCvWMpJ
-ZzaBeOkQNDlFZWp
-mtoejZINTVJDkhd</code></pre>
+dTPKhmwuXsLaNVP
+BJTtNsYqpOAxIfd
+DagYcsKbsceDXau
+NhCTUcZgEoSiLaO
+SfXzHLYsyqjMsZp
+HrKCpiIIpbSQINU
+JmyrnEKNkvDdwMO
+TCrjQwvrMWpOOzm
+nugCJQyNHfjfsNJ
+rUAJOHIZagWfBZd</code></pre>
 </div>
 </div>
 <p>This also means that <code>passgen</code> will use the same character set you built with the command-line options, to generate all of the different passwords. For example, if you use the options <code>-n</code> and <code>-o</code> like in the example below, <code>passgen</code> will generate 4 different passwords that have a combination of numbers and upper case Basic-Latin letters:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>terminal$ passgen -p 4 -n -o
-VOQ6H3BN9X
-7MPWFCB82I
-534FW142NH
-3ZF9ED1OJ0</code></pre>
+H66PYVVKSU
+A3ABBUIFGE
+BZOUHVKXC0
+SUN4835KV2</code></pre>
 </div>
 </div>
 

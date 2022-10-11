@@ -1,11 +1,14 @@
 BUILD_DIRECTORY = build
 SOURCE_DIRECTORY = src
+DOCS_DIRECTORY = docs
 
 
-$(BUILD_DIRECTORY)/passgen: main.o arguments_parser.o password.o global_variables.o
+object_files = main.o arguments_parser.o password.o global_variables.o
+
+$(BUILD_DIRECTORY)/passgen: $(object_files)
 	rm -r build
 	mkdir build
-	g++ -I./include -o $(BUILD_DIRECTORY)/passgen main.o arguments_parser.o password.o global_variables.o -static-libstdc++
+	g++ -I./include -o $(BUILD_DIRECTORY)/passgen $(object_files) -static-libstdc++
 	make clean
 
 main.o: $(SOURCE_DIRECTORY)/main.cpp
@@ -23,3 +26,5 @@ global_variables.o: $(SOURCE_DIRECTORY)/global_variables.cpp
 
 clean:
 	rm *.o
+
+

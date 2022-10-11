@@ -9,4 +9,3 @@ title: "`passgen`"
 - `passgen` uses only C++ Standard Library. As a result, it is very easy to build;
 - It have a option to generate multiple passwords at once;
 - Can produce "number-only", or, "special-chars-only" passwords;
-
